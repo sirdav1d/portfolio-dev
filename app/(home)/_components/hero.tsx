@@ -2,6 +2,7 @@
 
 import Prism from '@/components/Prism';
 import { AnimatedShinyText } from '@/components/ui/animated-shiny-text';
+import { BorderBeam } from '@/components/ui/border-beam';
 import { Button } from '@/components/ui/button';
 import {
 	Tooltip,
@@ -13,10 +14,14 @@ import Link from 'next/link';
 
 export default function Hero() {
 	return (
-		<section className='min-h-[calc(100vh-5rem)] flex items-center w-full'>
+		<section className='min-h-[calc(100vh-4rem)] flex items-center w-full'>
 			<div className='mx-auto grid md:grid-cols-2 w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0'>
 				<div className='space-y-5 w-full h-full'>
-					<span className='text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground border w-fit p-2 rounded-md'>
+					<span className='text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground border w-fit p-2 rounded-md relative'>
+						<BorderBeam
+							duration={8}
+							size={100}
+						/>
 						<AnimatedShinyText>Engenheiro de Software</AnimatedShinyText>
 					</span>
 					<h1 className='text-5xl leading-tight 2xl:text-8xl text-foreground md:text-5xl capitalize mt-10'>
@@ -45,22 +50,25 @@ export default function Hero() {
 				</div>
 				<div className='w-full flex flex-col justify-between h-full'>
 					<Prism
-						animationType='rotate'
-						timeScale={0.02}
-						height={4.0}
-						baseWidth={5.1}
-						scale={1.8}
-						offset={{ y: -80 }}
+						animationType='hover'
+						timeScale={0.2}
+						height={3.5}
+						baseWidth={5.0}
+						transparent
+						scale={1.6}
+						offset={{ y: -60 }}
 						hueShift={0}
 						colorFrequency={1}
 						noise={0.01}
 						glow={1}
+						bloom={1}
+						hoverStrength={1}
 					/>
 
 					<ul className='flex justify-center gap-5  md:gap-10'>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-red-600 transition-all ease-in-out duration-500'>
 									<Hexagon />
 								</TooltipTrigger>
 								<TooltipContent>
@@ -70,7 +78,7 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-amber-600 transition-all ease-in-out duration-500'>
 									<Zap />
 								</TooltipTrigger>
 								<TooltipContent>
@@ -80,7 +88,7 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-lime-600 transition-all ease-in-out duration-500'>
 									<Orbit />
 								</TooltipTrigger>
 								<TooltipContent>
@@ -90,7 +98,7 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-emerald-600 transition-all ease-in-out duration-500'>
 									<Shield />
 								</TooltipTrigger>
 								<TooltipContent>
@@ -100,7 +108,7 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-cyan-600 transition-all ease-in-out duration-500'>
 									<Contrast />
 								</TooltipTrigger>
 								<TooltipContent>
@@ -110,7 +118,7 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger>
+								<TooltipTrigger className='hover:text-indigo-600 transition-all ease-in-out duration-500'>
 									<Eye />
 								</TooltipTrigger>
 								<TooltipContent>

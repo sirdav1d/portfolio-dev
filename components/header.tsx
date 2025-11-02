@@ -59,7 +59,7 @@ const topics = [
 
 export default function Header() {
 	return (
-		<header className='sticky top-0 z-40 w-full border-b border-border/60 bg-background/50 backdrop-blur'>
+		<header className='sticky top-0 z-60 w-full border-b border-border/60 bg-background/50 backdrop-blur-md'>
 			<div className='mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5'>
 				<Link
 					href='/'
@@ -70,7 +70,9 @@ export default function Header() {
 				<NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<NavigationMenuLink asChild>
+							<NavigationMenuLink
+								asChild
+								className='font-normal'>
 								<Link
 									href='/'
 									className={navigationMenuTriggerStyle()}>
@@ -80,16 +82,18 @@ export default function Header() {
 						</NavigationMenuItem>
 
 						<NavigationMenuItem>
-							<NavigationMenuTrigger>Habilidades</NavigationMenuTrigger>
-							<NavigationMenuContent className='bg-background/50 backdrop-blur-md'>
+							<NavigationMenuTrigger className='font-normal'>
+								Habilidades
+							</NavigationMenuTrigger>
+							<NavigationMenuContent>
 								<ul className='grid p-2 gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 '>
 									{topics.map((topic) => (
 										<li key={topic.title}>
 											<NavigationMenuLink asChild>
 												<Link
 													href={topic.href}
-													className='block w-full h-full rounded-md border border-border/60 bg-card p-4 text-left transition-colors hover:border-border hover:bg-accent'>
-													<div className='text-sm font-medium text-foreground mb-2 space-y-1'>
+													className='block w-full h-full rounded-md border border-border/60 bg-card/50 p-4 text-left transition-colors hover:border-border hover:bg-accent'>
+													<div className='text-sm text-foreground mb-2 space-y-1'>
 														<topic.icon
 															size={16}
 															className='mb-1'
@@ -108,7 +112,9 @@ export default function Header() {
 						</NavigationMenuItem>
 
 						<NavigationMenuItem>
-							<NavigationMenuLink asChild>
+							<NavigationMenuLink
+								asChild
+								className='font-normal'>
 								<Link
 									href='/contato'
 									className={navigationMenuTriggerStyle()}>

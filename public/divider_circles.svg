@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240">
+  <title>Divider with three overlapping circles</title>
+  <desc>Minimal line divider with three overlapping circles centered and dots at both ends.</desc>
+  <g fill="none" stroke="#0F0F0F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- horizontal line -->
+    <line x1="100" y1="120" x2="1100" y2="120" />
+    <!-- three overlapping circles -->
+    <circle cx="540" cy="120" r="60" />
+    <circle cx="600" cy="120" r="60" />
+    <circle cx="660" cy="120" r="60" />
+    <!-- end dots -->
+    <circle cx="80" cy="120" r="6" fill="#0F0F0F" stroke="none" />
+    <circle cx="1120" cy="120" r="6" fill="#0F0F0F" stroke="none" />
+  </g>
+</svg>

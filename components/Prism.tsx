@@ -117,6 +117,7 @@ const Prism: React.FC<PrismProps> = ({
       uniform float uMinAxis;
       uniform float uPxScale;
       uniform float uTimeScale;
+      uniform float uIsDark;
 
       vec4 tanh4(vec4 x){
         vec4 e2x = exp(2.0*x);
@@ -206,6 +207,10 @@ const Prism: React.FC<PrismProps> = ({
           col = clamp(hueRotation(uHueShift) * col, 0.0, 1.0);
         }
 
+        float intensity = max(max(col.r, col.g), col.b);
+        float preserve = smoothstep(0.18, 0.55, intensity);
+        float blend = mix(preserve, 1.0, uIsDark);
+        col = mix(vec3(1.0), col, blend);
         gl_FragColor = vec4(col, o.a);
       }
     `;
@@ -240,9 +245,22 @@ const Prism: React.FC<PrismProps> = ({
 					value: 1 / ((gl.drawingBufferHeight || 1) * 0.1 * SCALE),
 				},
 				uTimeScale: { value: TS },
+				uIsDark: { value: 1 },
 			},
 		});
 		const mesh = new Mesh(gl, { geometry, program });
+
+		const applyTheme = () => {
+			const dark = document.documentElement.classList.contains('dark');
+			program.uniforms.uIsDark.value = dark ? 1 : 0;
+			gl.canvas.style.backgroundColor = dark ? 'transparent' : '#fff';
+		};
+		const themeObserver = new MutationObserver(applyTheme);
+		applyTheme();
+		themeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class'],
+		});
 
 		const resize = () => {
 			const w = container.clientWidth || 1;
@@ -452,6 +470,7 @@ const Prism: React.FC<PrismProps> = ({
 				window.removeEventListener('mouseleave', onLeave);
 				window.removeEventListener('blur', onBlur);
 			}
+			themeObserver.disconnect();
 			if (suspendWhenOffscreen) {
 				const io = (container as PrismContainer).__prismIO as
 					| IntersectionObserver
@@ -462,6 +481,7 @@ const Prism: React.FC<PrismProps> = ({
 			if (gl.canvas.parentElement === container)
 				container.removeChild(gl.canvas);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [
 		height,
 		baseWidth,
@@ -483,7 +503,7 @@ const Prism: React.FC<PrismProps> = ({
 
 	return (
 		<div
-			className='w-full h-full relative  transition-colors '
+			className='w-full h-full relative z-50 bg-white transition-colors dark:bg-transparent'
 			ref={containerRef}
 		/>
 	);
