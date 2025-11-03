@@ -17,13 +17,17 @@ export default function Hero() {
 		<section className='min-h-[calc(100vh-4rem)] flex items-center w-full'>
 			<div className='mx-auto grid md:grid-cols-2 w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0'>
 				<div className='space-y-5 w-full h-full'>
-					<span className='text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground border w-fit p-2 rounded-md relative'>
+					<div className='text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground border overflow-hidden w-fit p-2 rounded-md relative max-sm:mx-auto'>
 						<BorderBeam
-							duration={8}
-							size={100}
+							borderWidth={1}
+							reverse={false}
+							duration={4}
+							size={48}
 						/>
-						<AnimatedShinyText>Engenheiro de Software</AnimatedShinyText>
-					</span>
+						<AnimatedShinyText className='text-nowrap'>
+							Engenheiro de Software
+						</AnimatedShinyText>
+					</div>
 					<h1 className='text-5xl leading-tight 2xl:text-8xl text-foreground md:text-5xl capitalize mt-10'>
 						Transformando <br />
 						complexidade <br />
@@ -68,8 +72,10 @@ export default function Hero() {
 					<ul className='flex justify-center gap-5  md:gap-10'>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-red-600 transition-all ease-in-out duration-500'>
-									<Hexagon />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Hexagon className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Arquitetura Frontend</p>
@@ -78,8 +84,10 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-amber-600 transition-all ease-in-out duration-500'>
-									<Zap />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Zap className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Performance</p>
@@ -88,8 +96,10 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-lime-600 transition-all ease-in-out duration-500'>
-									<Orbit />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Orbit className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Estado & Comunicação</p>
@@ -98,8 +108,10 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-emerald-600 transition-all ease-in-out duration-500'>
-									<Shield />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Shield className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Testes & Qualidade</p>
@@ -108,8 +120,10 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-600 transition-all ease-in-out duration-500'>
-									<Contrast />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Contrast className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Acessibilidade</p>
@@ -118,8 +132,10 @@ export default function Hero() {
 						</li>
 						<li>
 							<Tooltip>
-								<TooltipTrigger className='hover:text-indigo-600 transition-all ease-in-out duration-500'>
-									<Eye />
+								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+										<Eye className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+									</div>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>Observabilidade</p>

@@ -3,11 +3,13 @@
 import type { Metadata } from 'next';
 
 import Hero from './_components/hero';
-import SectionSkill from './_components/section-skill';
-import Image from 'next/image';
+import SectionArchiteture from './_components/section-architeture';
+import BreakSection from '@/components/break-section';
+import SectionPerformance from './_components/section-performance';
+import SectionState from './_components/section-state';
 
 export const metadata: Metadata = {
-	title: 'Inicio',
+	title: 'Portfólio',
 	description:
 		'Portifolio tecnico com foco em produtos digitais escalaveis, cobrindo arquitetura, performance, estado, observabilidade, acessibilidade e testes.',
 	keywords: [
@@ -24,32 +26,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main>
+		<main className='overflow-x-hidden'>
 			<Hero />
-			<div className='mx-auto w-full max-w-7xl flex items-center justify-center my-5 opacity-10'>
-				<Image
-					src='/divider_circles.svg'
-					width={400}
-					height={100}
-					alt='divider'
-					className='dark:invert'
-				/>
-				<Image
-					src='/divider_circles.svg'
-					width={400}
-					height={100}
-					alt='divider'
-					className='dark:invert'
-				/>
-				<Image
-					src='/divider_circles.svg'
-					width={400}
-					height={100}
-					alt='divider'
-					className='dark:invert'
-				/>
-			</div>
-			<SectionSkill />
+			<BreakSection />
+			<SectionArchiteture />
+			<BreakSection />
+			<SectionPerformance />
+			<BreakSection />
+			<SectionState />
+			<BreakSection />
 		</main>
 	);
 }

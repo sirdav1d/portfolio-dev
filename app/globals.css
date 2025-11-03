@@ -144,7 +144,7 @@ body{
   }
 
   p {
-    @apply font-mono
+    @apply font-mono leading-normal
   }
 }
 
