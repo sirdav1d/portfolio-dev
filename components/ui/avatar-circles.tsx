@@ -24,7 +24,7 @@ export const AvatarCircles = ({
 			initial={{ filter: 'blur(2px)' }}
 			whileInView={{ filter: 'blur(0px)' }}
 			transition={{
-				delay: 0.5,
+				delay: 1.5,
 				duration: 1,
 			}}
 			className={cn('z-10 flex -space-x-4 rtl:space-x-reverse', className)}>

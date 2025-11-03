@@ -1,6 +1,7 @@
 /** @format */
 
 import { Orbit } from 'lucide-react';
+import FlowState from './flow-state';
 
 export default function SectionState() {
 	return (
@@ -26,6 +27,7 @@ export default function SectionState() {
 						define a previsibilidade e a fluidez da experiência.
 					</p>
 				</div>
+				<FlowState />
 			</div>
 		</section>
 	);
