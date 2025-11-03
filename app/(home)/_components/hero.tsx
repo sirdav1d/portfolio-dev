@@ -34,8 +34,8 @@ export default function Hero() {
 						em experiência
 					</h1>
 					<p className='text-base max-w-xl text-muted-foreground sm:text-xl'>
-						Portfólio técnico interativo, focado em habilidades essenciais do
-						frontend moderno
+						Portfólio técnico interativo, focado em habilidades essenciais do{' '}
+						<span className='text-foreground'>frontend moderno</span>
 					</p>
 					<div className='flex flex-col items-center gap-4 sm:flex-row sm:justify-start'>
 						<Button

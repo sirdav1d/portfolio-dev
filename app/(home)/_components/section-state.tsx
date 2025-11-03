@@ -17,14 +17,13 @@ export default function SectionState() {
 						Estado & Comunicação
 					</h2>
 					<p className='text-muted-foreground text-sm md:text-lg text-balance'>
-						A <span className='text-foreground'>performance</span> é a linha que
-						separa uma interface comum de uma{' '}
-						<span className='text-foreground'>experiência memorável</span>. Não
-						é apenas sobre tempo de carregamento — é sobre fazer o{' '}
+						Gerenciar o estado é sobre entender o{' '}
+						<span className='text-foreground'>fluxo natural da aplicação</span>.
+						A forma como os dados circulam entre o{' '}
 						<span className='text-foreground'>
-							usuário sentir fluidez e controle
-						</span>
-						.
+							servidor, o cache e a interface
+						</span>{' '}
+						define a previsibilidade e a fluidez da experiência.
 					</p>
 				</div>
 			</div>
