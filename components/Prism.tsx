@@ -503,7 +503,7 @@ const Prism: React.FC<PrismProps> = ({
 
 	return (
 		<div
-			className='w-full h-full relative z-50 bg-white transition-colors dark:bg-transparent'
+			className='w-full h-full relative z-50 bg-white transition-colors dark:bg-transparent hidden md:block'
 			ref={containerRef}
 		/>
 	);

@@ -4,7 +4,8 @@ import React from 'react';
 
 const WITHOUT_CACHE_SNIPPET = [
 	'async function getTodoWithoutCache() {',
-	"  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
+	'  const response = ',
+	"await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
 	"    cache: 'no-store',",
 	'  });',
 	'',
@@ -18,7 +19,8 @@ const WITHOUT_CACHE_SNIPPET = [
 
 const WITH_CACHE_SNIPPET = [
 	'async function getTodoWithCache() {',
-	"  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
+	'  const response = ',
+	"await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
 	'    next: {',
 	'      revalidate: 60,',
 	"      tags: ['todo'],",
@@ -38,7 +40,7 @@ const WITH_CACHE_SNIPPET = [
 
 export default function FethExamples() {
 	return (
-		<section className='space-y-6 rounded-xl border border-border bg-background/90 p-6 shadow-lg'>
+		<section className='space-y-6 rounded-xl border border-border bg-background/90 md:p-6 shadow-lg overflow-x-hidden p-3'>
 			<header className='space-y-2'>
 				<h2 className='text-4xl text-foreground'>Estratégias de Fetch</h2>
 				<p className='text-sm text-muted-foreground'>
@@ -62,7 +64,7 @@ export default function FethExamples() {
 							intermediária.
 						</p>
 					</div>
-					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-4 text-xs text-muted-foreground h-80'>
+					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px]'>
 						<code>{WITHOUT_CACHE_SNIPPET}</code>
 					</pre>
 				</article>
@@ -80,7 +82,7 @@ export default function FethExamples() {
 							linha com as práticas recomendadas para apps Server Components.
 						</p>
 					</div>
-					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-4 text-xs text-muted-foreground h-80'>
+					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px]'>
 						<code>{WITH_CACHE_SNIPPET}</code>
 					</pre>
 				</article>

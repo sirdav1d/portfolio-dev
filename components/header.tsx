@@ -22,53 +22,53 @@ const topics = [
 	{
 		icon: Hexagon,
 		title: 'Arquitetura',
-		href: '/arquitetura',
+		href: '#arc',
 		description: 'Principios e padroes para sustentar aplicacoes robustas.',
 	},
 	{
 		icon: Zap,
 		title: 'Performance',
-		href: '/performance',
+		href: '#perf',
 		description: 'Estrategias para entregar experiencias rapidas e eficientes.',
 	},
 	{
 		icon: Orbit,
 		title: 'Gerenciamento de Estado',
-		href: '/gerenciamento-de-estado',
+		href: '#state',
 		description: 'Organize dados complexos sem perder previsibilidade.',
 	},
 	{
 		icon: Shield,
 		title: 'Testes',
-		href: '/testes',
+		href: '#test',
 		description: 'Garanta qualidade continua com automacao inteligente.',
 	},
 
 	{
 		icon: Contrast,
 		title: 'Acessibilidade',
-		href: '/acessibilidade',
+		href: '#access',
 		description: 'Interfaces inclusivas que funcionam para qualquer pessoa.',
 	},
 	{
 		icon: Eye,
 		title: 'Observabilidade',
-		href: '/observabilidade',
+		href: '#observer',
 		description: 'Monitore, trace e antecipe problemas em producao.',
 	},
 ];
 
 export default function Header() {
 	return (
-		<header className='sticky top-0 z-60 w-full border-b border-border/60 bg-background/50 backdrop-blur-md'>
+		<header className='sticky top-0 z-60 w-full border-b border-border/60 bg-background/50 backdrop-blur-md '>
 			<div className='mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5'>
 				<Link
 					href='/'
-					className='text-base font-semibold uppercase tracking-[0.2em] text-foreground'>
+					className='text-base font-semibold uppercase tracking-[0.2em] text-foreground max-md:mx-auto'>
 					david.dev
 				</Link>
 
-				<NavigationMenu>
+				<NavigationMenu className='max-md:hidden'>
 					<NavigationMenuList>
 						<NavigationMenuItem>
 							<NavigationMenuLink

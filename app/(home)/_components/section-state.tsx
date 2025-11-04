@@ -6,7 +6,9 @@ import ContextZustandExamples from '@/components/context-zustand-examples';
 
 export default function SectionState() {
 	return (
-		<section className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
+		<section
+			id='state'
+			className='py-20 min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
 				<Orbit
 					fill='none'

@@ -69,7 +69,7 @@ export default function Hero() {
 						hoverStrength={1}
 					/>
 
-					<ul className='flex justify-center gap-5  md:gap-10'>
+					<ul className='flex justify-center gap-5  md:gap-10 max-md:mt-10'>
 						<li>
 							<a href='#arc'>
 								<Tooltip>
