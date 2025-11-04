@@ -9,6 +9,7 @@ import SectionPerformance from './_components/section-performance';
 import SectionState from './_components/section-state';
 import SectionTestQA from './_components/section-test-qa';
 import SectionAccess from './_components/section-aceess';
+import SectionObserver from './_components/section-observer';
 
 export const metadata: Metadata = {
 	title: 'Portfólio',
@@ -41,6 +42,7 @@ export default function Home() {
 			<BreakSection />
 			<SectionAccess />
 			<BreakSection />
+			<SectionObserver />
 		</main>
 	);
 }

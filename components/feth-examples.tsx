@@ -64,7 +64,7 @@ export default function FethExamples() {
 							intermediária.
 						</p>
 					</div>
-					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px]'>
+					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px] w-full'>
 						<code>{WITHOUT_CACHE_SNIPPET}</code>
 					</pre>
 				</article>

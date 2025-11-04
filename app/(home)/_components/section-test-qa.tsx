@@ -34,7 +34,7 @@ export default function SectionTestQA() {
 				</div>
 				<div className='grid lg:grid-cols-2 gap-5'>
 					<div className='col-span-2 flex'>
-						<p className='text-muted-foreground  md:text-xl italic w-1/2'>
+						<p className='text-muted-foreground  md:text-xl italic w-1/2 font-light text-left'>
 							&quot;Uso <span className='text-foreground'>Jest</span> para
 							validações rápidas e{' '}
 							<span className='text-foreground'>
@@ -46,7 +46,7 @@ export default function SectionTestQA() {
 						</p>
 					</div>
 					<div className='col-span-2 flex justify-end text-right'>
-						<p className='text-muted-foreground md:text-xl italic w-1/2 text-balance'>
+						<p className='text-muted-foreground md:text-xl italic w-1/2 text-balance font-light'>
 							&quot;Entendo que em uma pipeline ideal, cada PR executaria testes
 							que{' '}
 							<span className='text-foreground'>

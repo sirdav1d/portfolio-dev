@@ -97,7 +97,7 @@ export default function ContextZustandExamples() {
 							Compiler esses hooks passam a ser aplicados automáticamente
 						</p>
 					</div>
-					<pre className='rounded-lg bg-muted/40 md:p-4 p-2   text-[9px] md:text-xs text-muted-foreground md:h-[596px]'>
+					<pre className='rounded-lg bg-muted/40 md:p-4 p-2   text-[9px] md:text-xs text-muted-foreground md:h-[640px]'>
 						<code>{CONTEXT_SNIPPET}</code>
 					</pre>
 				</article>
@@ -123,7 +123,7 @@ export default function ContextZustandExamples() {
 							para selecionar fatias do estado com rerenders mínimos.
 						</p>
 					</div>
-					<pre className='rounded-lg bg-muted/40 md:p-4 p-2 text-[9px] md:text-xs text-muted-foreground md:h-[596px]'>
+					<pre className='rounded-lg bg-muted/40 md:p-4 p-2 text-[9px] md:text-xs text-muted-foreground md:h-[640px]'>
 						<code className=''>{ZUSTAND_SNIPPET}</code>
 					</pre>
 				</article>

@@ -2,6 +2,7 @@
 
 'use client';
 
+import { BorderBeam } from '@/components/ui/border-beam';
 import { motion } from 'motion/react';
 
 export default function PPR() {
@@ -13,17 +14,23 @@ export default function PPR() {
 				whileInView={{ opacity: 1, y: 0 }}
 			/>
 			<motion.span
-				className='w-full rounded-md h-10 md:h-20 bg-linear-to-r from-cyan-500 to-amber-500'
+				className='w-full rounded-md h-10 md:h-20  relative border'
 				initial={{ opacity: 0, y: -40 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{
-					delay: 0.5,
+					delay: 0.3,
 					repeatType: 'mirror',
 					repeat: Infinity,
-					repeatDelay: 2,
+					repeatDelay: 4,
 					duration: 1,
-				}}
-			/>
+				}}>
+				<BorderBeam
+					borderWidth={1}
+					reverse={false}
+					duration={4}
+					size={60}
+				/>
+			</motion.span>
 			<motion.span
 				className='w-full rounded-md h-10 md:h-20 bg-muted'
 				initial={{ opacity: 0, y: -40 }}
