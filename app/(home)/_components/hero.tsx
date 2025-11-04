@@ -22,7 +22,7 @@ export default function Hero() {
 							borderWidth={1}
 							reverse={false}
 							duration={4}
-							size={48}
+							size={60}
 						/>
 						<AnimatedShinyText className='text-nowrap'>
 							Engenheiro de Software
@@ -64,83 +64,95 @@ export default function Hero() {
 						hueShift={0}
 						colorFrequency={1}
 						noise={0.01}
-						glow={1}
+						glow={1.1}
 						bloom={1}
 						hoverStrength={1}
 					/>
 
 					<ul className='flex justify-center gap-5  md:gap-10'>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Hexagon className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Arquitetura Frontend</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#arc'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Hexagon className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Arquitetura Frontend</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Zap className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Performance</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#perf'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Zap className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Performance</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Orbit className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Estado & Comunicação</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#state'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Orbit className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Estado & Comunicação</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Shield className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Testes & Qualidade</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#test'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Shield className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Testes & Qualidade</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Contrast className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Acessibilidade</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#access'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Contrast className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Acessibilidade</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Tooltip>
-								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-									<div className='group-hover:bg-linear-to-br from-white/10 to-white/10 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-										<Eye className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
-									</div>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Observabilidade</p>
-								</TooltipContent>
-							</Tooltip>
+							<a href='#observer'>
+								<Tooltip>
+									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
+										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
+											<Eye className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Observabilidade</p>
+									</TooltipContent>
+								</Tooltip>
+							</a>
 						</li>
 					</ul>
 				</div>

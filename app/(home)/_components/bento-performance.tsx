@@ -1,11 +1,11 @@
 /** @format */
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { Images, LoaderPinwheel, Save, Zap } from 'lucide-react';
+import { Images, Layers2, LoaderPinwheel, Save, Zap } from 'lucide-react';
 import { AvatarCirclesGroup } from './avatar-group';
 import LazySkeletons from './lazy-skeletons';
 import PPR from './ppr';
-import CacheIntelligence from './cache-intelligence';
+import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
 
 export function BentoGridSecondDemo() {
 	return (
@@ -56,8 +56,80 @@ const items = [
 	{
 		title: 'Cache Inteligente',
 		description:
-			'Dados e recursos são armazenados estrategicamente para reaproveitamento.',
-		header: <CacheIntelligence />,
+			'5 maneiras de armazenar em cache dados e recursos estrategicamente para reaproveitamento.',
+		header: (
+			<div className='h-full w-full mx-auto flex gap-5 lg:gap-20 items-center justify-center text-muted-foreground relative'>
+				<DottedGlowBackground
+					className='pointer-events-none mask-radial-to-90% mask-radial-at-center'
+					opacity={1}
+					gap={10}
+					radius={1.6}
+					colorLightVar='--color-neutral-500'
+					glowColorLightVar='--color-neutral-600'
+					colorDarkVar='--color-neutral-500'
+					glowColorDarkVar='--color-sky-800'
+					backgroundOpacity={0}
+					speedMin={0.3}
+					speedMax={1.6}
+					speedScale={1}
+				/>
+				<div className=' relative group'>
+					<Layers2
+						size={30}
+						fill='none'
+						strokeWidth={1}
+						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
+					/>
+					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-15 text-xs text-foreground'>
+						Request Memoization Cache
+					</p>
+				</div>
+				<div className=' relative group'>
+					<Layers2
+						size={30}
+						fill='none'
+						strokeWidth={1}
+						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
+					/>
+					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-5 text-xs text-foreground '>
+						Data Cache
+					</p>
+				</div>
+				<div className=' relative group'>
+					<Layers2
+						size={30}
+						fill='none'
+						strokeWidth={1}
+						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
+					/>
+					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-8 text-xs text-foreground'>
+						Full Route Cache
+					</p>
+				</div>
+				<div className=' relative group'>
+					<Layers2
+						size={30}
+						fill='none'
+						strokeWidth={1}
+						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
+					/>
+					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-20 text-xs text-foreground'>
+						Router Cache (Client-side Cache)
+					</p>
+				</div>
+				<div className=' relative group'>
+					<Layers2
+						size={30}
+						fill='none'
+						strokeWidth={1}
+						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
+					/>
+					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-20 text-xs text-foreground'>
+						“use cache” / Cache Components
+					</p>
+				</div>
+			</div>
+		),
 		className: 'md:col-span-2',
 		icon: <Save className='h-4 w-4 ' />,
 	},

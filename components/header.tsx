@@ -20,6 +20,12 @@ import { Contrast, Eye, Hexagon, Orbit, Shield, Zap } from 'lucide-react';
 
 const topics = [
 	{
+		icon: Hexagon,
+		title: 'Arquitetura',
+		href: '/arquitetura',
+		description: 'Principios e padroes para sustentar aplicacoes robustas.',
+	},
+	{
 		icon: Zap,
 		title: 'Performance',
 		href: '/performance',
@@ -32,11 +38,12 @@ const topics = [
 		description: 'Organize dados complexos sem perder previsibilidade.',
 	},
 	{
-		icon: Eye,
-		title: 'Observabilidade',
-		href: '/observabilidade',
-		description: 'Monitore, trace e antecipe problemas em producao.',
+		icon: Shield,
+		title: 'Testes',
+		href: '/testes',
+		description: 'Garanta qualidade continua com automacao inteligente.',
 	},
+
 	{
 		icon: Contrast,
 		title: 'Acessibilidade',
@@ -44,16 +51,10 @@ const topics = [
 		description: 'Interfaces inclusivas que funcionam para qualquer pessoa.',
 	},
 	{
-		icon: Hexagon,
-		title: 'Arquitetura',
-		href: '/arquitetura',
-		description: 'Principios e padroes para sustentar aplicacoes robustas.',
-	},
-	{
-		icon: Shield,
-		title: 'Testes',
-		href: '/testes',
-		description: 'Garanta qualidade continua com automacao inteligente.',
+		icon: Eye,
+		title: 'Observabilidade',
+		href: '/observabilidade',
+		description: 'Monitore, trace e antecipe problemas em producao.',
 	},
 ];
 

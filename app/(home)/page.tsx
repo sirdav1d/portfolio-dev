@@ -2,11 +2,13 @@
 
 import type { Metadata } from 'next';
 
+import BreakSection from '@/components/break-section';
 import Hero from './_components/hero';
 import SectionArchiteture from './_components/section-architeture';
-import BreakSection from '@/components/break-section';
 import SectionPerformance from './_components/section-performance';
 import SectionState from './_components/section-state';
+import SectionTestQA from './_components/section-test-qa';
+import SectionAccess from './_components/section-aceess';
 
 export const metadata: Metadata = {
 	title: 'Portfólio',
@@ -34,6 +36,10 @@ export default function Home() {
 			<SectionPerformance />
 			<BreakSection />
 			<SectionState />
+			<BreakSection />
+			<SectionTestQA />
+			<BreakSection />
+			<SectionAccess />
 			<BreakSection />
 		</main>
 	);

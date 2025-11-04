@@ -2,6 +2,7 @@
 
 import { Orbit } from 'lucide-react';
 import FlowState from './flow-state';
+import ContextZustandExamples from '@/components/context-zustand-examples';
 
 export default function SectionState() {
 	return (
@@ -17,7 +18,7 @@ export default function SectionState() {
 					<h2 className='text-3xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
 						Estado & Comunicação
 					</h2>
-					<p className='text-muted-foreground text-sm md:text-lg text-balance'>
+					<p className='text-muted-foreground md:text-lg text-balance'>
 						Gerenciar o estado é sobre entender o{' '}
 						<span className='text-foreground'>fluxo natural da aplicação</span>.
 						A forma como os dados circulam entre o{' '}
@@ -28,6 +29,7 @@ export default function SectionState() {
 					</p>
 				</div>
 				<FlowState />
+				<ContextZustandExamples />
 			</div>
 		</section>
 	);

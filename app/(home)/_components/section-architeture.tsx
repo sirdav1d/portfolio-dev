@@ -6,7 +6,9 @@ import Architeture from './architeture';
 
 export default function SectionArchiteture() {
 	return (
-		<section className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
+		<section
+			id='arc'
+			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10  md:space-y-20'>
 				<Hexagon
 					fill='none'
@@ -20,19 +22,10 @@ export default function SectionArchiteture() {
 				</h2>
 
 				<div className='flex flex-col md:flex-row w-full gap-10 md:gap-20 items-start justify-center '>
-					<p className='text-muted-foreground text-balance text-sm leading-normal md:text-lg'>
-						A fundação que conecta{' '}
-						<span className='text-foreground'>
-							performance, reuso e previsibilidade
-						</span>
-						. <br />
-						Cada decisão torna o código replicável e o{' '}
-						<span className='text-foreground'>fluxo de dados previsível.</span>
-						<br />
-						<br />O código é organizado com base em camadas bem definidas,
-						unindo princípios do{' '}
-						<span className='text-foreground'>Atomic Design</span> e do{' '}
-						<span className='text-foreground'>Feature-Sliced Design.</span>
+					<p className='text-muted-foreground text-balance leading-normal md:text-lg'>
+						O código é organizado com base em camadas bem definidas, unindo
+						princípios do <span className='text-foreground'>Atomic Design</span>{' '}
+						e do <span className='text-foreground'>Feature-Sliced Design.</span>
 						<br />
 						<br />
 						Componentes usados em múltiplas features são tratados como{' '}

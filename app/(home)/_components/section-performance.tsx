@@ -1,12 +1,14 @@
 /** @format */
 
+import FethExamples from '@/components/feth-examples';
 import { Zap } from 'lucide-react';
-import React from 'react';
 import { BentoGridSecondDemo } from './bento-performance';
 
 export default function SectionPerformance() {
 	return (
-		<section className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
+		<section
+			id='perf'
+			className='md:py-20 min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
 				<Zap
 					fill='none'
@@ -18,7 +20,7 @@ export default function SectionPerformance() {
 					<h2 className='text-3xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
 						Performance & Escalabilidade
 					</h2>
-					<p className='text-muted-foreground text-sm md:text-lg text-balance'>
+					<p className='text-muted-foreground  md:text-lg text-balance'>
 						A <span className='text-foreground'>performance</span> é a linha que
 						separa uma interface comum de uma{' '}
 						<span className='text-foreground'>experiência memorável</span>. Não
@@ -30,6 +32,7 @@ export default function SectionPerformance() {
 					</p>
 				</div>
 				<BentoGridSecondDemo />
+				<FethExamples />
 			</div>
 		</section>
 	);

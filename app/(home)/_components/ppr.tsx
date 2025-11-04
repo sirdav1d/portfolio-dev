@@ -8,7 +8,7 @@ export default function PPR() {
 	return (
 		<div className='overflow-hidden w-full flex gap-3 flex-col h-full'>
 			<motion.span
-				className='w-full rounded-md h-10 md:h-20 bg-card'
+				className='w-full rounded-md h-10 md:h-20 bg-muted'
 				initial={{ opacity: 0, y: -40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 			/>
@@ -25,7 +25,7 @@ export default function PPR() {
 				}}
 			/>
 			<motion.span
-				className='w-full rounded-md h-10 md:h-20 bg-card'
+				className='w-full rounded-md h-10 md:h-20 bg-muted'
 				initial={{ opacity: 0, y: -40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 			/>
