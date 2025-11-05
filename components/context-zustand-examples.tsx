@@ -71,7 +71,7 @@ export default function ContextZustandExamples() {
 	return (
 		<section className='space-y-6 rounded-xl border border-border bg-background/90 md:p-6 p-3 shadow-lg'>
 			<header className='space-y-2'>
-				<h2 className='text-4xl  text-foreground'>Context API vs Zustand</h2>
+				<h2 className='text-2xl  text-foreground'>Context API vs Zustand</h2>
 				<p className=' text-balance text-muted-foreground'>
 					Comparação rápida entre a abordagem declarativa do React Context e o
 					gerenciador enxuto do Zustand para stores globais.

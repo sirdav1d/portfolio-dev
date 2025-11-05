@@ -1,11 +1,11 @@
 /** @format */
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { Images, Layers2, LoaderPinwheel, Save, Zap } from 'lucide-react';
-import { AvatarCirclesGroup } from './avatar-group';
-import LazySkeletons from './lazy-skeletons';
-import PPR from './ppr';
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
+import { Images, Layers2, LoaderPinwheel, Save, Zap } from 'lucide-react';
+import LazySkeletons from './lazy-skeletons';
+import PixxelImageAnimated from './pixxel-image-animated';
+import PPR from './ppr';
 
 export function BentoGridSecondDemo() {
 	return (
@@ -46,8 +46,8 @@ const items = [
 		description:
 			'Imagens, fontes e recursos estáticos são entregues otimizados w compactados',
 		header: (
-			<div className='mx-auto flex items-center justify-center h-full scale-200'>
-				<AvatarCirclesGroup />
+			<div className='mx-auto  flex items-center justify-center h-full '>
+				<PixxelImageAnimated />
 			</div>
 		),
 		className: 'md:col-span-1',
@@ -56,7 +56,7 @@ const items = [
 	{
 		title: 'Cache Inteligente',
 		description:
-			'5 maneiras de armazenar em cache dados e recursos estrategicamente para reaproveitamento.',
+			'Temos maneiras de armazenar em cache dados e recursos estrategicamente para reaproveitamento.',
 		header: (
 			<div className='h-full w-full mx-auto flex gap-5 lg:gap-20 items-center justify-center text-muted-foreground relative'>
 				<DottedGlowBackground

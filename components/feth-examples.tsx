@@ -42,7 +42,7 @@ export default function FethExamples() {
 	return (
 		<section className='space-y-6 rounded-xl border border-border bg-background/90 md:p-6 shadow-lg overflow-x-hidden p-3'>
 			<header className='space-y-2'>
-				<h2 className='text-4xl text-foreground'>Estratégias de Fetch</h2>
+				<h2 className='text-2xl text-foreground'>Estratégias de Fetch</h2>
 				<p className='text-sm text-muted-foreground'>
 					Contraste entre uma chamada sem cache e uma versão otimizada para o
 					Next.js.

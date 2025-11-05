@@ -8,12 +8,14 @@ import {
 	CardTitle,
 } from '@/components/ui/card';
 import { Shield } from 'lucide-react';
+import { MockJestSafari } from './mock-jest-safari';
+import { MockJestIphone } from './mock-jest-iphone';
 
 export default function SectionTestQA() {
 	return (
 		<section
 			id='test'
-			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
+			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative py-20'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
 				<Shield
 					fill='none'
@@ -36,29 +38,26 @@ export default function SectionTestQA() {
 					<div className='col-span-2 flex'>
 						<p className='text-muted-foreground  md:text-xl italic w-1/2 font-light text-left'>
 							&quot;Uso <span className='text-foreground'>Jest</span> para
-							validações rápidas e{' '}
+							validações rápidas e teste de comportamento, junto com{' '}
 							<span className='text-foreground'>
 								Faker para gerar dados realistas
 							</span>
-							. Não aplico TDD formalmente, mas sigo a lógica de{' '}
-							<span className='text-foreground'>planejar o comportamento</span>{' '}
-							antes de codar.&quot;
+							.
 						</p>
 					</div>
 					<div className='col-span-2 flex justify-end text-right'>
 						<p className='text-muted-foreground md:text-xl italic w-1/2 text-balance font-light'>
-							&quot;Entendo que em uma pipeline ideal, cada PR executaria testes
-							que{' '}
-							<span className='text-foreground'>
-								confirmam que o sistema continua estável
-							</span>
-							. Defino o que deve ser testado pelo{' '}
+							&quot;Defino o que deve ser testado pelo{' '}
 							<span className='text-foreground'>
 								impacto no negócio e na experiência do usuário,
 							</span>{' '}
 							o que quebra confiança é o que precisa de proteção. &quot;
 						</p>
 					</div>
+				</div>
+				<div>
+					<MockJestSafari />
+					<MockJestIphone />
 				</div>
 				<div className='grid md:grid-cols-3 gap-5'>
 					<Card>

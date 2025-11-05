@@ -16,19 +16,23 @@ export default function PPR() {
 			<motion.span
 				className='w-full rounded-md h-10 md:h-20  relative border'
 				initial={{ opacity: 0, y: -40 }}
-				animate={{ opacity: 1, y: 0 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				whileHover={{ opacity: 0, y: -40 }}
 				transition={{
-					delay: 0.3,
-					repeatType: 'mirror',
-					repeat: Infinity,
-					repeatDelay: 4,
-					duration: 1,
+					duration: 0.5,
 				}}>
 				<BorderBeam
-					borderWidth={1}
-					reverse={false}
-					duration={4}
-					size={60}
+					duration={3}
+					size={68}
+					colorFrom='#b45309'
+					colorTo='#f59e0b'
+				/>
+				<BorderBeam
+					delay={1.5}
+					duration={3}
+					size={68}
+					colorFrom='#0e7490'
+					colorTo='#06b6d4'
 				/>
 			</motion.span>
 			<motion.span
