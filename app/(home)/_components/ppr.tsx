@@ -20,6 +20,7 @@ export default function PPR() {
 				whileHover={{ opacity: 0, y: -40 }}
 				transition={{
 					duration: 0.5,
+					delay: 0.3,
 				}}>
 				<BorderBeam
 					duration={3}

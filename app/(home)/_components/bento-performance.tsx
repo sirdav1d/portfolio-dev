@@ -58,22 +58,22 @@ const items = [
 		description:
 			'Temos maneiras de armazenar em cache dados e recursos estrategicamente para reaproveitamento.',
 		header: (
-			<div className='h-full w-full mx-auto flex gap-5 lg:gap-20 items-center justify-center text-muted-foreground relative'>
+			<div className='h-full w-full mx-auto flex gap-5 lg:gap-20 items-center justify-center text-muted-foreground relative min-h-24'>
 				<DottedGlowBackground
 					className='pointer-events-none mask-radial-to-90% mask-radial-at-center'
 					opacity={1}
 					gap={10}
 					radius={1.6}
-					colorLightVar='--color-neutral-500'
-					glowColorLightVar='--color-neutral-600'
-					colorDarkVar='--color-neutral-500'
-					glowColorDarkVar='--color-sky-800'
+					colorLightVar='--color-zinc-500'
+					glowColorLightVar='--color-zinc-600'
+					colorDarkVar='--color-zinc-500'
+					glowColorDarkVar='--color-cyan-800'
 					backgroundOpacity={0}
 					speedMin={0.3}
 					speedMax={1.6}
 					speedScale={1}
 				/>
-				<div className=' relative group'>
+				<div className=' relative group z-10'>
 					<Layers2
 						size={30}
 						fill='none'

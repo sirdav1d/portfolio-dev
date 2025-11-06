@@ -77,7 +77,7 @@ export function Iphone({
 					<img
 						src={src}
 						alt='image mockup jest'
-						className='block size-full object-scale-down px-1  object-top-left bg-white py-28 rounded-xl opacity-80'
+						className='block invert size-full object-scale-down px-1  object-top-left bg-white py-28 rounded-xl opacity-80'
 					/>
 				</div>
 			)}

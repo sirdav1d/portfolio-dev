@@ -81,7 +81,7 @@ export function Safari({
 					<img
 						src={imageSrc}
 						alt='imagem de mockup'
-						className='block size-full opacity-80 object-contain object-top py-5 bg-white'
+						className='block size-full opacity-80 object-contain object-top py-5 bg-white invert'
 					/>
 				</div>
 			)}

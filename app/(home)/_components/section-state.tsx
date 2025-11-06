@@ -21,8 +21,6 @@ export default function SectionState() {
 						Estado & Comunicação
 					</h2>
 					<p className='text-muted-foreground md:text-lg text-balance'>
-						Gerenciar o estado é sobre entender o{' '}
-						<span className='text-foreground'>fluxo natural da aplicação</span>.
 						A forma como os dados circulam entre o{' '}
 						<span className='text-foreground'>
 							servidor, o cache e a interface
