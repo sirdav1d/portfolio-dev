@@ -1,7 +1,6 @@
 /** @format */
 
 import { Hexagon } from 'lucide-react';
-import React from 'react';
 import Architeture from './architeture';
 
 export default function SectionArchiteture() {
@@ -17,24 +16,73 @@ export default function SectionArchiteture() {
 					className='absolute left-0 top-0 h-96 w-96 text-foreground/10'
 				/>
 
-				<h2 className='text-3xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
+				<h2 className='text-4xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
 					Arquitetura Frontend
 				</h2>
 
 				<div className='flex flex-col md:flex-row w-full gap-10 md:gap-20 items-start justify-center '>
-					<p className='text-muted-foreground text-balance leading-normal md:text-lg'>
-						O código é organizado com base em camadas bem definidas, unindo
-						princípios do <span className='text-foreground'>Atomic Design</span>{' '}
-						e do <span className='text-foreground'>Feature-Sliced Design.</span>
-						<br />
-						<br />
-						Componentes usados em múltiplas features são tratados como{' '}
-						<span className='text-foreground'>
-							blocos reutilizáveis globais
-						</span>
-						, enquanto os específicos permanecem isolados dentro do{' '}
-						<span className='text-foreground'>contexto de cada feature</span>.
-					</p>
+					<div className='flex flex-col gap-10'>
+						<p className='text-muted-foreground text-balance leading-normal md:text-lg'>
+							O código é organizado em camadas claras, combinando ideias de{' '}
+							<span className='text-foreground italic'>Atomic Design</span> e{' '}
+							<span className='text-foreground italic'>
+								Feature-Sliced Design.
+							</span>
+						</p>
+						<ul className='space-y-5 text-sm list-disc text-muted-foreground text-left px-4'>
+							<li>
+								As rotas vivem em{' '}
+								<code className='bg-muted text-foreground px-1 rounded'>
+									app/
+								</code>
+								, com seções do portfólio agrupadas por segmento (ex.:
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									app/(home)
+								</code>
+								,{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									app/(skills)
+								</code>
+								).
+							</li>
+							<li>
+								Componentes usados em múltiplas partes do site são tratados como
+								blocos reutilizáveis globais em{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									components/ (botões, cards, grids, tipografia).
+								</code>
+							</li>
+							<li>
+								Já os componentes que fazem sentido apenas dentro de uma seção
+								(por exemplo, a demo de Context vs Zustand) ficam colados à rota
+								correspondente em pastas de{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									_components
+								</code>{' '}
+								dentro de{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									app/
+								</code>
+								.
+							</li>
+							<li>
+								Utilitários, hooks e providers globais ficam isolados em{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									lib/
+								</code>
+								,{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									hooks/
+								</code>{' '}
+								e{' '}
+								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
+									providers/
+								</code>
+								, o que ajuda a manter UI, regra de negócio e infraestrutura
+								desacopladas.
+							</li>
+						</ul>
+					</div>
 					<div className='w-full'>
 						<Architeture />
 					</div>
