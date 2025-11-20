@@ -34,10 +34,12 @@ function Tooltip({
 }
 
 function TooltipTrigger({
+	className,
 	...props
 }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
 	return (
 		<TooltipPrimitive.Trigger
+			className={cn('cursor-pointer', className)}
 			data-slot='tooltip-trigger'
 			{...props}
 		/>

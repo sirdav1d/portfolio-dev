@@ -4,6 +4,7 @@ import Prism from '@/components/Prism';
 import { AnimatedShinyText } from '@/components/ui/animated-shiny-text';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { Button } from '@/components/ui/button';
+import { RainbowButton } from '@/components/ui/rainbow-button';
 import {
 	Tooltip,
 	TooltipContent,
@@ -19,10 +20,15 @@ export default function Hero() {
 				<div className='space-y-5 w-full h-full'>
 					<div className='text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground border overflow-hidden w-fit p-2 rounded-md relative max-sm:mx-auto'>
 						<BorderBeam
-							borderWidth={1}
-							reverse={false}
-							duration={4}
-							size={60}
+							duration={3}
+							colorFrom='#b45309'
+							colorTo='#f59e0b'
+						/>
+						<BorderBeam
+							delay={1.5}
+							duration={3}
+							colorFrom='#0e7490'
+							colorTo='#06b6d4'
 						/>
 						<AnimatedShinyText className='text-nowrap'>
 							Engenheiro de Software
@@ -38,11 +44,12 @@ export default function Hero() {
 						<span className='text-foreground'>frontend moderno</span>
 					</p>
 					<div className='flex flex-col items-center gap-4 sm:flex-row sm:justify-start'>
-						<Button
-							size='lg'
-							className='text-xl capitalize'>
-							Explorar Skills
-						</Button>
+						<RainbowButton
+							size={'lg'}
+							className='text-xl capitalize'
+							asChild>
+							<a href='#arc'>Explorar Skills</a>
+						</RainbowButton>
 						<Button
 							variant='outline'
 							className='text-xl capitalize'
@@ -70,12 +77,29 @@ export default function Hero() {
 					/>
 
 					<ul className='flex justify-center gap-5  md:gap-10 max-md:mt-10'>
-						<li>
-							<a href='#arc'>
+						<li className='cursor-pointer'>
+							<a
+								href='#arc'
+								className='cursor-pointer'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Hexagon className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Hexagon />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
@@ -88,8 +112,23 @@ export default function Hero() {
 							<a href='#perf'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Zap className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Zap />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
@@ -102,8 +141,23 @@ export default function Hero() {
 							<a href='#state'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Orbit className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Orbit />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
@@ -116,8 +170,23 @@ export default function Hero() {
 							<a href='#test'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Shield className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Shield />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
@@ -130,8 +199,23 @@ export default function Hero() {
 							<a href='#access'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Contrast className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Contrast />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
@@ -144,8 +228,23 @@ export default function Hero() {
 							<a href='#observer'>
 								<Tooltip>
 									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='group-hover:bg-linear-to-br from-amber-500/20 to-amber-500/20 via-transparent backdrop-blur-md group-hover:border-border border border-transparent p-1 rounded-md transition-all ease-in-out duration-300'>
-											<Eye className='group-hover:-translate-y-1 transition-all ease-in-out duration-300' />
+										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												duration={3}
+												colorFrom='#b45309'
+												colorTo='#f59e0b'
+											/>
+											<BorderBeam
+												className='invisible group-hover:visible	'
+												size={20}
+												delay={1.5}
+												duration={3}
+												colorFrom='#0e7490'
+												colorTo='#06b6d4'
+											/>
+											<Eye />
 										</div>
 									</TooltipTrigger>
 									<TooltipContent>
