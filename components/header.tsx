@@ -6,16 +6,15 @@ import Link from 'next/link';
 
 import {
 	NavigationMenu,
-	NavigationMenuList,
-	NavigationMenuItem,
-	NavigationMenuTrigger,
 	NavigationMenuContent,
-	NavigationMenuLink,
-	NavigationMenuViewport,
 	NavigationMenuIndicator,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
+	NavigationMenuViewport,
 } from '@/components/ui/navigation-menu';
-import { AnimatedThemeToggler } from './ui/animated-theme-toggler';
 import { Contrast, Eye, Hexagon, Orbit, Shield, Zap } from 'lucide-react';
 
 const topics = [
@@ -123,7 +122,6 @@ export default function Header() {
 								</Link>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
-						<AnimatedThemeToggler className='cursor-pointer' />
 					</NavigationMenuList>
 					<NavigationMenuIndicator />
 					<NavigationMenuViewport />

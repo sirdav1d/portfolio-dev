@@ -1,16 +1,11 @@
-/** @format */
+﻿/** @format */
 
 import Prism from '@/components/Prism';
 import { AnimatedShinyText } from '@/components/ui/animated-shiny-text';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { Button } from '@/components/ui/button';
 import { RainbowButton } from '@/components/ui/rainbow-button';
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { Contrast, Eye, Hexagon, Orbit, Shield, Zap } from 'lucide-react';
+import { SectionNavDock } from '@/components/section-nav-dock';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -34,7 +29,7 @@ export default function Hero() {
 							Engenheiro de Software
 						</AnimatedShinyText>
 					</div>
-					<h1 className='text-5xl leading-tight 2xl:text-8xl text-foreground md:text-5xl capitalize mt-10'>
+					<h1 className='text-3xl leading-tight 2xl:text-8xl text-foreground md:text-4xl capitalize mt-10'>
 						Transformando <br />
 						complexidade <br />
 						em experiência
@@ -76,184 +71,7 @@ export default function Hero() {
 						hoverStrength={1}
 					/>
 
-					<ul className='flex justify-center gap-5  md:gap-10 max-md:mt-10'>
-						<li className='cursor-pointer'>
-							<a
-								href='#arc'
-								className='cursor-pointer'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Hexagon />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Arquitetura Frontend</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-						<li>
-							<a href='#perf'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Zap />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Performance</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-						<li>
-							<a href='#state'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Orbit />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Estado & Comunicação</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-						<li>
-							<a href='#test'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Shield />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Testes & Qualidade</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-						<li>
-							<a href='#access'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Contrast />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Acessibilidade</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-						<li>
-							<a href='#observer'>
-								<Tooltip>
-									<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group '>
-										<div className='backdrop-blur-md group-hover:border-border/20 border border-transparent p-1 rounded transition-all ease-in-out duration-300 relative overflow-visible'>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												duration={3}
-												colorFrom='#b45309'
-												colorTo='#f59e0b'
-											/>
-											<BorderBeam
-												className='invisible group-hover:visible	'
-												size={20}
-												delay={1.5}
-												duration={3}
-												colorFrom='#0e7490'
-												colorTo='#06b6d4'
-											/>
-											<Eye />
-										</div>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>Observabilidade</p>
-									</TooltipContent>
-								</Tooltip>
-							</a>
-						</li>
-					</ul>
+					<SectionNavDock />
 				</div>
 			</div>
 		</section>

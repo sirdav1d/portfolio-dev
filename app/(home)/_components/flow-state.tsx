@@ -1,44 +1,118 @@
-/** @format */
+﻿/** @format */
 
 import { BorderBeam } from '@/components/ui/border-beam';
 
+function Node({
+	label,
+	accent,
+}: {
+	label: string;
+	accent: 'amber' | 'cyan' | 'slate';
+}) {
+	const color =
+		accent === 'amber'
+			? { from: '#b45309', to: '#f59e0b' }
+			: accent === 'cyan'
+			? { from: '#0e7490', to: '#06b6d4' }
+			: { from: '#334155', to: '#64748b' };
+
+	return (
+		<span className='relative z-10 flex items-center justify-center rounded-full border border-border/70 bg-background px-4 py-2 text-xs sm:text-sm'>
+			<BorderBeam
+				duration={2}
+				colorFrom={color.from}
+				colorTo={color.to}
+			/>
+			{label}
+		</span>
+	);
+}
+
+function Arrow() {
+	return (
+		<span className='text-muted-foreground/70 text-lg sm:text-xl'>
+			→
+		</span>
+	);
+}
+
 export default function FlowState() {
 	return (
-		<div className='relative flex w-full justify-between items-center max-w-2xl mx-auto'>
-			<div className='pointer-events-none absolute left-10 right-10 top-1/2 -translate-y-1/2 h-px bg-linear-to-r from-amber-500/60 via-white/20 to-cyan-500/60 sm:left-16 sm:right-16 -z-20' />
-			<span className='border rounded-full py-2 px-4 md:px-6 relative text-sm md:text-base z-20 bg-background'>
-				<BorderBeam
-					duration={2}
-					colorFrom='#b45309'
-					colorTo='#f59e0b'
-				/>
-				Servidor
-			</span>
-			<span className='relative z-20 flex h-16 w-16 shrink-0 items-center justify-center sm:h-20 sm:w-20 border rounded-md bg-background'>
-				<BorderBeam
-					duration={3}
-					colorFrom='#b45309'
-					colorTo='#f59e0b'
-				/>
-				<BorderBeam
-					delay={1.5}
-					duration={3}
-					colorFrom='#0e7490'
-					colorTo='#06b6d4'
-				/>
-				<span className='pointer-events-none absolute text-sm font-medium leading-tight  md:text-base '>
-					Cache
-				</span>
-			</span>
-			<span className='border rounded-full py-2 px-4 md:px-6 relative z-10 text-sm md:text-base bg-background'>
-				<BorderBeam
-					duration={2}
-					colorFrom='#0e7490'
-					colorTo='#06b6d4'
-					reverse
-				/>
-				Interface
-			</span>
+		<div className='rounded-xl border border-border/60 bg-background/70 p-4 md:p-6 shadow-lg'>
+			<div className='space-y-6'>
+				<div className='space-y-3'>
+					<div className='flex items-center justify-between text-xs uppercase tracking-wide text-muted-foreground'>
+						<span>Leitura (read)</span>
+						<span>UI renderiza dados consolidados</span>
+					</div>
+					<div className='flex flex-wrap items-center justify-center gap-3 sm:gap-4'>
+						<Node
+							label='Servidor'
+							accent='amber'
+						/>
+						<Arrow />
+						<Node
+							label='Cache'
+							accent='cyan'
+						/>
+						<Arrow />
+						<Node
+							label='Interface'
+							accent='slate'
+						/>
+					</div>
+				</div>
+
+				<div className='h-px bg-border/60' />
+
+				<div className='space-y-3'>
+					<div className='flex items-center justify-between text-xs uppercase tracking-wide text-muted-foreground'>
+						<span>Mutação (write)</span>
+						<span>UI dispara ação e revalida</span>
+					</div>
+					<div className='flex flex-wrap items-center justify-center gap-3 sm:gap-4'>
+						<Node
+							label='Interface'
+							accent='slate'
+						/>
+						<Arrow />
+						<Node
+							label='Action'
+							accent='amber'
+						/>
+						<Arrow />
+						<Node
+							label='Servidor'
+							accent='amber'
+						/>
+						<Arrow />
+						<Node
+							label='Cache'
+							accent='cyan'
+						/>
+						<Arrow />
+						<Node
+							label='Interface'
+							accent='slate'
+						/>
+					</div>
+				</div>
+
+				<div className='flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground pt-2'>
+					<span className='inline-flex items-center gap-2'>
+						<span className='size-2 rounded-full bg-amber-400' />
+						Server-first
+					</span>
+					<span className='inline-flex items-center gap-2'>
+						<span className='size-2 rounded-full bg-cyan-400' />
+						Cache centralizado
+					</span>
+					<span className='inline-flex items-center gap-2'>
+						<span className='size-2 rounded-full bg-slate-400' />
+						UI reativa
+					</span>
+				</div>
+			</div>
 		</div>
 	);
 }

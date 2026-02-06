@@ -1,4 +1,4 @@
-/** @format */
+﻿/** @format */
 
 import { Hexagon } from 'lucide-react';
 import Architeture from './architeture';
@@ -8,7 +8,7 @@ export default function SectionArchiteture() {
 		<section
 			id='arc'
 			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
-			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10  md:space-y-20'>
+			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 md:space-y-16'>
 				<Hexagon
 					fill='none'
 					stroke='currentColor'
@@ -16,75 +16,111 @@ export default function SectionArchiteture() {
 					className='absolute left-0 top-0 h-96 w-96 text-foreground/10'
 				/>
 
-				<h2 className='text-4xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
-					Arquitetura Frontend
-				</h2>
+				<header className='space-y-4 text-center'>
+					<h2 className='text-4xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
+						Arquitetura Frontend
+					</h2>
+					<p className='text-muted-foreground text-balance leading-normal md:text-lg max-w-3xl mx-auto'>
+						Decisões de arquitetura que tornam o código previsível, escalável e
+						fácil de manter, mesmo com crescimento de features e time.
+					</p>
+				</header>
 
-				<div className='flex flex-col md:flex-row w-full gap-10 md:gap-20 items-start justify-center '>
-					<div className='flex flex-col gap-10'>
-						<p className='text-muted-foreground text-balance leading-normal md:text-lg'>
-							O código é organizado em camadas claras, combinando ideias de{' '}
-							<span className='text-foreground italic'>Atomic Design</span> e{' '}
-							<span className='text-foreground italic'>
-								Feature-Sliced Design.
-							</span>
-						</p>
-						<ul className='space-y-5 text-sm list-disc text-muted-foreground text-left px-4'>
+				<div className='grid gap-6 lg:grid-cols-3'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left space-y-4'>
+						<h3 className='text-xl text-foreground'>Princípios</h3>
+						<ul className='list-disc space-y-4 text-sm text-muted-foreground pl-4'>
+							<li>Isolamento por feature para reduzir acoplamento.</li>
+							<li>Reuso consciente entre UI global e UI local.</li>
+							<li>Fluxo de dados explícito e rastreável.</li>
+							<li>Convenções claras para acelerar onboarding.</li>
+						</ul>
+					</div>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left space-y-4'>
+						<h3 className='text-xl text-foreground'>Modelo</h3>
+						<ul className='list-disc space-y-4 text-sm text-muted-foreground pl-4'>
 							<li>
-								As rotas vivem em{' '}
-								<code className='bg-muted text-foreground px-1 rounded'>
-									app/
-								</code>
-								, com seções do portfólio agrupadas por segmento (ex.:
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									app/(home)
-								</code>
-								,{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									app/(skills)
-								</code>
-								).
+								Atomic Design para componentes reutilizáveis e consistência
+								visual.
 							</li>
 							<li>
-								Componentes usados em múltiplas partes do site são tratados como
-								blocos reutilizáveis globais em{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									components/ (botões, cards, grids, tipografia).
-								</code>
+								Feature-Sliced para agrupar lógica, UI e ações por contexto.
 							</li>
 							<li>
-								Já os componentes que fazem sentido apenas dentro de uma seção
-								(por exemplo, a demo de Context vs Zustand) ficam colados à rota
-								correspondente em pastas de{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									_components
-								</code>{' '}
-								dentro de{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									app/
-								</code>
-								.
-							</li>
-							<li>
-								Utilitários, hooks e providers globais ficam isolados em{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									lib/
-								</code>
-								,{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									hooks/
-								</code>{' '}
-								e{' '}
-								<code className='bg-muted text-foreground px-1 mx-1 rounded'>
-									providers/
-								</code>
-								, o que ajuda a manter UI, regra de negócio e infraestrutura
-								desacopladas.
+								Camadas separadas para rotas, UI compartilhada e infraestrutura.
 							</li>
 						</ul>
 					</div>
-					<div className='w-full'>
-						<Architeture />
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left space-y-4'>
+						<h3 className='text-xl text-foreground'>Regras</h3>
+						<ul className='list-disc space-y-4 text-sm text-muted-foreground pl-4'>
+							<li>UI não acessa dados diretamente.</li>
+							<li>Ações centralizam fetch e integrações.</li>
+							<li>Compartilhados não dependem de features.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div className='space-y-8 text-left'>
+					<div className='space-y-4'>
+						<div className='space-y-2 text-center sm:text-left'>
+							<h3 className='text-2xl text-foreground'>Mapa visual</h3>
+						</div>
+
+						<div className='flex flex-wrap gap-3 text-xs text-muted-foreground justify-center sm:justify-start'>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-sky-400' />
+								Rotas
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-amber-400' />
+								UI compartilhada
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-violet-400' />
+								Infra (hooks, lib, providers)
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-lime-400' />
+								Ações e dados
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-rose-400' />
+								Qualidade
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-emerald-400' />
+								Docs
+							</span>
+							<span className='inline-flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-fuchsia-400' />
+								Assets
+							</span>
+						</div>
+
+						<div className='rounded-xl border border-border/60 bg-background/70 p-3 md:p-4'>
+							<Architeture />
+						</div>
+					</div>
+
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 space-y-3'>
+						<h3 className='text-lg md:text-2xl text-foreground'>
+							O que evitamos
+						</h3>
+						<ul className='flex justify-between text-sm text-muted-foreground'>
+							<li className='flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-gray-100' />
+								Componentes globais com lógica de feature.
+							</li>
+							<li className='flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-gray-100' />
+								Imports cruzados entre features.
+							</li>
+							<li className='flex items-center gap-2'>
+								<span className='size-2 rounded-full bg-gray-100' />
+								Providers empilhados sem necessidade real.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

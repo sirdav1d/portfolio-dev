@@ -35,8 +35,9 @@ export default function RootLayout({
 			suppressHydrationWarning>
 			<body className={`${inter.variable} ${instrument.variable} antialiased`}>
 				<ThemeProvider
-					attribute='class'
 					defaultTheme='dark'
+					forcedTheme='dark'
+					attribute={'class'}
 					enableSystem={false}
 					disableTransitionOnChange>
 					<Header />

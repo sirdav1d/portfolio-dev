@@ -1,4 +1,4 @@
-/** @format */
+﻿/** @format */
 
 import { Orbit } from 'lucide-react';
 import FlowState from './flow-state';
@@ -21,11 +21,11 @@ export default function SectionState() {
 						Estado & Comunicação
 					</h2>
 					<p className='text-muted-foreground md:text-lg text-balance'>
-						A forma como os dados circulam entre o{' '}
-						<span className='text-foreground'>
-							servidor, o cache e a interface
-						</span>{' '}
-						define a previsibilidade e a fluidez da experiência.
+						Como os dados fluem entre{' '}
+						<span className='text-foreground'>servidor</span>,{' '}
+						<span className='text-foreground'>cache</span> e{' '}
+						<span className='text-foreground'>interface</span> define
+						 previsibilidade e velocidade percebida.
 					</p>
 				</div>
 				<FlowState />

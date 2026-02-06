@@ -19,9 +19,31 @@ import {
 import { Tree, TreeItem, TreeItemLabel } from '@/components/tree';
 import { Button } from '@/components/ui/button';
 
+type Tone =
+	| 'routes'
+	| 'ui'
+	| 'infra'
+	| 'data'
+	| 'quality'
+	| 'public'
+	| 'docs'
+	| 'meta';
+
+const TONE_CLASSES: Record<Tone, string> = {
+	routes: 'text-sky-400',
+	ui: 'text-amber-400',
+	infra: 'text-violet-400',
+	data: 'text-lime-400',
+	quality: 'text-rose-400',
+	public: 'text-fuchsia-400',
+	docs: 'text-emerald-400',
+	meta: 'text-muted-foreground',
+};
+
 interface Item {
 	name: string;
 	children?: string[];
+	tone?: Tone;
 }
 
 // Estrutura de pastas simulando um projeto real,
@@ -47,12 +69,13 @@ const items: Record<string, Item> = {
 	},
 
 	proxy: { name: 'proxy.ts' },
-	readme: { name: 'README.md' },
-	git: { name: '.gitignore' },
+	readme: { name: 'README.md', tone: 'docs' },
+	git: { name: '.gitignore', tone: 'meta' },
 
 	actions: {
 		name: 'actions',
 		children: ['action-session', 'action-audit-log'],
+		tone: 'data',
 	},
 	'action-session': { name: 'session.ts' },
 	'action-audit-log': { name: 'audit-log.ts' },
@@ -61,6 +84,7 @@ const items: Record<string, Item> = {
 	'app-dir': {
 		name: 'app/',
 		children: ['app-layout', 'app-globals', 'public-group', 'private-group'],
+		tone: 'routes',
 	},
 	'app-layout': { name: 'layout.tsx' },
 	'app-globals': { name: 'globals.css' },
@@ -226,6 +250,7 @@ const items: Record<string, Item> = {
 	'components-dir': {
 		name: 'components/',
 		children: ['components-ui', 'components-feedback'],
+		tone: 'ui',
 	},
 	'components-ui': {
 		name: 'ui/',
@@ -251,6 +276,7 @@ const items: Record<string, Item> = {
 			'hook-use-feature-flags',
 			'hook-use-breadcrumbs',
 		],
+		tone: 'infra',
 	},
 	'hook-use-auth': { name: 'use-auth.ts' },
 	'hook-use-feature-flags': { name: 'use-feature-flags.ts' },
@@ -260,6 +286,7 @@ const items: Record<string, Item> = {
 	'lib-dir': {
 		name: 'lib/',
 		children: ['lib-auth', 'lib-utils', 'lib-rest-client', 'lib-query-client'],
+		tone: 'infra',
 	},
 	'lib-auth': { name: 'auth/', children: ['lib-auth-adapter'] },
 	'lib-auth-adapter': { name: 'adapter.ts' },
@@ -278,6 +305,7 @@ const items: Record<string, Item> = {
 	'providers-dir': {
 		name: 'providers/',
 		children: ['provider-auth', 'provider-query', 'provider-theme'],
+		tone: 'infra',
 	},
 	'provider-auth': { name: 'auth-provider.tsx' },
 	'provider-query': { name: 'query-provider.tsx' },
@@ -287,6 +315,7 @@ const items: Record<string, Item> = {
 	'tests-dir': {
 		name: 'tests/',
 		children: ['test-dashboard', 'test-auth-smoke'],
+		tone: 'quality',
 	},
 	'test-dashboard': { name: 'dashboard.feature.test.ts' },
 	'test-auth-smoke': { name: 'auth.smoke.test.ts' },
@@ -295,6 +324,7 @@ const items: Record<string, Item> = {
 	'public-dir': {
 		name: 'public/',
 		children: ['public-favicon', 'public-robots', 'public-og'],
+		tone: 'public',
 	},
 	'public-favicon': { name: 'favicon.ico' },
 	'public-robots': { name: 'robots.txt' },
@@ -304,8 +334,38 @@ const items: Record<string, Item> = {
 	'ia-dir': {
 		name: 'IA/',
 		children: ['ia-arquitetura'],
+		tone: 'docs',
 	},
 	'ia-arquitetura': { name: 'Arquitetura_Frontend_Contexto.md' },
+};
+
+const parentById = Object.entries(items).reduce(
+	(acc, [parentId, item]) => {
+		item.children?.forEach((childId) => {
+			acc[childId] = parentId;
+		});
+		return acc;
+	},
+	{} as Record<string, string>,
+);
+
+const getTone = (itemId: string): Tone | undefined => {
+	let currentId: string | undefined = itemId;
+
+	while (currentId) {
+		const tone = items[currentId]?.tone;
+		if (tone) {
+			return tone;
+		}
+		currentId = parentById[currentId];
+	}
+
+	return undefined;
+};
+
+const getToneClass = (itemId: string) => {
+	const tone = getTone(itemId);
+	return tone ? TONE_CLASSES[tone] : '';
 };
 
 const indent = 20;
@@ -369,34 +429,38 @@ export default function ArchitectureTree() {
 				<Tree
 					indent={indent}
 					tree={tree}>
-					{tree.getItems().map((item) => (
-						<TreeItem
-							key={item.getId()}
-							item={item}>
-							<TreeItemLabel>
-								<span className='flex items-center gap-2'>
-									{item.isFolder() &&
-										(item.isExpanded() ? (
-											<FolderOpenIcon
-												className='pointer-events-none size-4 text-muted-foreground'
-												aria-hidden='true'
-											/>
-										) : (
-											<FolderIcon
-												className='pointer-events-none size-4 text-muted-foreground'
-												aria-hidden='true'
-											/>
-										))}
-									{item.getItemName()}
-									{item.isFolder() && (
-										<span className='-ms-1 text-muted-foreground'>
-											({item.getChildren().length})
-										</span>
-									)}
-								</span>
-							</TreeItemLabel>
-						</TreeItem>
-					))}
+					{tree.getItems().map((item) => {
+						const toneClass = getToneClass(item.getId());
+
+						return (
+							<TreeItem
+								key={item.getId()}
+								item={item}>
+								<TreeItemLabel className={toneClass}>
+									<span className='flex items-center gap-2'>
+										{item.isFolder() &&
+											(item.isExpanded() ? (
+												<FolderOpenIcon
+													className='pointer-events-none size-4 text-muted-foreground'
+													aria-hidden='true'
+												/>
+											) : (
+												<FolderIcon
+													className='pointer-events-none size-4 text-muted-foreground'
+													aria-hidden='true'
+												/>
+											))}
+										{item.getItemName()}
+										{item.isFolder() && (
+											<span className='-ms-1 text-muted-foreground'>
+												({item.getChildren().length})
+											</span>
+										)}
+									</span>
+								</TreeItemLabel>
+							</TreeItem>
+						);
+					})}
 				</Tree>
 			</div>
 		</div>

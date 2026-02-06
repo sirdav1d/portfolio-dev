@@ -1,8 +1,8 @@
-/** @format */
+﻿/** @format */
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
-import { Images, Layers2, LoaderPinwheel, Save, Zap } from 'lucide-react';
+import { Images, LoaderPinwheel, Save, Zap } from 'lucide-react';
+import CacheIntelligence from './cache-intelligence';
 import LazySkeletons from './lazy-skeletons';
 import PixxelImageAnimated from './pixxel-image-animated';
 import PPR from './ppr';
@@ -42,11 +42,11 @@ const items = [
 		icon: <Zap className='h-4 w-4' />,
 	},
 	{
-		title: 'Arquivos Estáticos Otimizadas',
+		title: 'Arquivos Estáticos Otimizados',
 		description:
-			'Imagens, fontes e recursos estáticos são entregues otimizados w compactados',
+			'Imagens, fontes e recursos estáticos são entregues otimizados e compactados.',
 		header: (
-			<div className='mx-auto  flex items-center justify-center h-full '>
+			<div className='mx-auto flex items-center justify-center h-full'>
 				<PixxelImageAnimated />
 			</div>
 		),
@@ -56,80 +56,8 @@ const items = [
 	{
 		title: 'Cache Inteligente',
 		description:
-			'Temos maneiras de armazenar em cache dados e recursos estrategicamente para reaproveitamento.',
-		header: (
-			<div className='h-full w-full mx-auto flex gap-5 lg:gap-20 items-center justify-center text-muted-foreground relative min-h-24'>
-				<DottedGlowBackground
-					className='pointer-events-none mask-radial-to-90% mask-radial-at-center'
-					opacity={1}
-					gap={10}
-					radius={1.6}
-					colorLightVar='--color-zinc-500'
-					glowColorLightVar='--color-zinc-600'
-					colorDarkVar='--color-zinc-500'
-					glowColorDarkVar='--color-cyan-800'
-					backgroundOpacity={0}
-					speedMin={0.3}
-					speedMax={1.6}
-					speedScale={1}
-				/>
-				<div className=' relative group z-10'>
-					<Layers2
-						size={30}
-						fill='none'
-						strokeWidth={1}
-						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
-					/>
-					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-15 text-xs text-foreground'>
-						Request Memoization Cache
-					</p>
-				</div>
-				<div className=' relative group'>
-					<Layers2
-						size={30}
-						fill='none'
-						strokeWidth={1}
-						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
-					/>
-					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-5 text-xs text-foreground '>
-						Data Cache
-					</p>
-				</div>
-				<div className=' relative group'>
-					<Layers2
-						size={30}
-						fill='none'
-						strokeWidth={1}
-						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
-					/>
-					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-8 text-xs text-foreground'>
-						Full Route Cache
-					</p>
-				</div>
-				<div className=' relative group'>
-					<Layers2
-						size={30}
-						fill='none'
-						strokeWidth={1}
-						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
-					/>
-					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-20 text-xs text-foreground'>
-						Router Cache (Client-side Cache)
-					</p>
-				</div>
-				<div className=' relative group'>
-					<Layers2
-						size={30}
-						fill='none'
-						strokeWidth={1}
-						className=' lg:scale-200 transition-all ease-in-out duration-200  hover:text-foreground '
-					/>
-					<p className='hidden group-hover:block absolute -bottom-10 text-nowrap -left-20 text-xs text-foreground'>
-						“use cache” / Cache Components
-					</p>
-				</div>
-			</div>
-		),
+			'Camadas de cache bem definidas evitam refetch desnecessário e reduzem latência.',
+		header: <CacheIntelligence />,
 		className: 'md:col-span-2',
 		icon: <Save className='h-4 w-4 ' />,
 	},

@@ -1,42 +1,36 @@
-/** @format */
+﻿/** @format */
 
-import React from 'react';
+import { CodeBlock } from '@/components/ui/code-block';
 
-const WITHOUT_CACHE_SNIPPET = [
-	'async function getTodoWithoutCache() {',
-	'  const response = ',
-	"await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
-	"    cache: 'no-store',",
-	'  });',
-	'',
-	'  if (!response.ok) {',
-	"    throw new Error('Falha ao buscar os dados em tempo real');",
-	'  }',
-	'',
-	'  return response.json();',
-	'}',
-].join('\n');
+const WITHOUT_CACHE_SNIPPET = `async function getTodoWithoutCache() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+    cache: 'no-store',
+  });
 
-const WITH_CACHE_SNIPPET = [
-	'async function getTodoWithCache() {',
-	'  const response = ',
-	"await fetch('https://jsonplaceholder.typicode.com/todos/1', {",
-	'    next: {',
-	'      revalidate: 60,',
-	"      tags: ['todo'],",
-	'    },',
-	'    headers: {',
-	"      Accept: 'application/json',",
-	'    },',
-	'  });',
-	'',
-	'  if (!response.ok) {',
-	"    throw new Error('Falha ao buscar os dados com cache');",
-	'  }',
-	'',
-	'  return response.json();',
-	'}',
-].join('\n');
+  if (!response.ok) {
+    throw new Error('Falha ao buscar os dados em tempo real');
+  }
+
+  return response.json();
+}`;
+
+const WITH_CACHE_SNIPPET = `async function getTodoWithCache() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+    next: {
+      revalidate: 60,
+      tags: ['todo'],
+    },
+    headers: {
+      Accept: 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Falha ao buscar os dados com cache');
+  }
+
+  return response.json();
+}`;
 
 export default function FethExamples() {
 	return (
@@ -49,43 +43,53 @@ export default function FethExamples() {
 				</p>
 			</header>
 
-			<div className='grid lg:grid-cols-2 gap-10'>
-				<article className='space-y-4 h-full  flex flex-col justify-between items-start text-left'>
-					<div className='space-y-2'>
-						<h3 className='font-mono text-sm uppercase tracking-wide text-foreground'>
-							Sem Cache
+			<div className='grid gap-4 md:grid-cols-2'>
+				<article className='rounded-lg border border-border/60 bg-background/70 p-4 space-y-3 text-left'>
+					<div className='space-y-1'>
+						<h3 className='font-mono text-xs uppercase tracking-wide text-foreground'>
+							Sem cache
 						</h3>
-						<p className='text-sm text-muted-foreground'>
-							A requisição é marcada com{' '}
-							<code className='rounded bg-muted/60 px-1 py-0.5 font-mono text-xs'>
-								cache: &apos;no-store&apos;
-							</code>{' '}
-							para garantir dados sempre atualizados, ignorando qualquer camada
-							intermediária.
-						</p>
 					</div>
-					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px] w-full'>
-						<code>{WITHOUT_CACHE_SNIPPET}</code>
-					</pre>
+					<ul className='list-disc space-y-2 text-sm text-muted-foreground pl-4'>
+						<li>Dados sempre frescos com cache: no-store.</li>
+						<li>Maior latência e custo por chamada.</li>
+						<li>Ideal para dados sensíveis ou tempo real.</li>
+					</ul>
 				</article>
 
-				<article className='space-y-4 text-left'>
-					<div className='space-y-2'>
-						<h3 className='font-mono text-sm uppercase tracking-wide text-foreground'>
-							Com Cache e Revalidação
+				<article className='rounded-lg border border-border/60 bg-background/70 p-4 space-y-3 text-left'>
+					<div className='space-y-1'>
+						<h3 className='font-mono text-xs uppercase tracking-wide text-foreground'>
+							Com cache e revalidação
 						</h3>
-						<p className='text-sm text-muted-foreground'>
-							<code className='rounded bg-muted/60 px-1 py-0.5 font-mono text-xs'>
-								next.revalidate
-							</code>{' '}
-							e tags permitem revalidação incremental e invalidação seletiva, em
-							linha com as práticas recomendadas para apps Server Components.
-						</p>
 					</div>
-					<pre className='overflow-x-auto rounded-lg bg-muted/40 p-2 md:p-4 md:text-xs text-muted-foreground md:h-80 text-[9px]'>
-						<code>{WITH_CACHE_SNIPPET}</code>
-					</pre>
+					<ul className='list-disc space-y-2 text-sm text-muted-foreground pl-4'>
+						<li>Revalidação incremental controlada.</li>
+						<li>Invalidação seletiva por tags.</li>
+						<li>Melhor tempo de resposta percebido.</li>
+					</ul>
 				</article>
+			</div>
+
+			<div className='rounded-xl border border-border/60 bg-background/70 p-4'>
+				<CodeBlock
+					language='ts'
+					filename='fetch.ts'
+					tabs={[
+						{
+							name: 'Sem cache',
+							code: WITHOUT_CACHE_SNIPPET,
+							language: 'ts',
+							highlightLines: [3],
+						},
+						{
+							name: 'Com cache',
+							code: WITH_CACHE_SNIPPET,
+							language: 'ts',
+							highlightLines: [4, 5],
+						},
+					]}
+				/>
 			</div>
 		</section>
 	);
