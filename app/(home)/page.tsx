@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main className='overflow-x-hidden'>
+		<main className='overflow-x-hidden pb-10'>
 			<Hero />
 			<BreakSection />
 			<SectionArchiteture />
