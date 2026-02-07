@@ -13,8 +13,8 @@ function Node({
 		accent === 'amber'
 			? { from: '#b45309', to: '#f59e0b' }
 			: accent === 'cyan'
-			? { from: '#0e7490', to: '#06b6d4' }
-			: { from: '#334155', to: '#64748b' };
+				? { from: '#0e7490', to: '#06b6d4' }
+				: { from: '#334155', to: '#64748b' };
 
 	return (
 		<span className='relative z-10 flex items-center justify-center rounded-full border border-border/70 bg-background px-4 py-2 text-xs sm:text-sm'>
@@ -29,11 +29,7 @@ function Node({
 }
 
 function Arrow() {
-	return (
-		<span className='text-muted-foreground/70 text-lg sm:text-xl'>
-			→
-		</span>
-	);
+	return <span className='text-muted-foreground/70 text-lg sm:text-xl'>→</span>;
 }
 
 export default function FlowState() {
@@ -63,7 +59,7 @@ export default function FlowState() {
 					</div>
 				</div>
 
-				<div className='h-px bg-border/60' />
+				<div className='h-px bg-border/90' />
 
 				<div className='space-y-3'>
 					<div className='flex items-center justify-between text-xs uppercase tracking-wide text-muted-foreground'>
@@ -96,21 +92,6 @@ export default function FlowState() {
 							accent='slate'
 						/>
 					</div>
-				</div>
-
-				<div className='flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground pt-2'>
-					<span className='inline-flex items-center gap-2'>
-						<span className='size-2 rounded-full bg-amber-400' />
-						Server-first
-					</span>
-					<span className='inline-flex items-center gap-2'>
-						<span className='size-2 rounded-full bg-cyan-400' />
-						Cache centralizado
-					</span>
-					<span className='inline-flex items-center gap-2'>
-						<span className='size-2 rounded-full bg-slate-400' />
-						UI reativa
-					</span>
 				</div>
 			</div>
 		</div>

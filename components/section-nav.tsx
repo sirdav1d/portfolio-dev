@@ -2,36 +2,50 @@
 
 'use client';
 
+import { useRef } from 'react';
 import { BorderBeam } from '@/components/ui/border-beam';
+import { AtomIcon } from '@/components/ui/atom';
+import { BlocksIcon } from '@/components/ui/blocks';
+import { ContrastIcon } from '@/components/ui/contrast';
+import { EyeIcon } from '@/components/ui/eye';
+import { ShieldCheckIcon } from '@/components/ui/shield-check';
+import { ZapIcon } from '@/components/ui/zap';
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
-import {
-	Contrast,
-	Eye,
-	Hexagon,
-	Orbit,
-	Shield,
-	Zap,
-	type LucideIcon,
-} from 'lucide-react';
+import type {
+	ComponentPropsWithoutRef,
+	ForwardRefExoticComponent,
+	RefAttributes,
+} from 'react';
+
+type AnimatedIconHandle = {
+	startAnimation: () => void;
+	stopAnimation: () => void;
+};
+
+type AnimatedIconComponent = ForwardRefExoticComponent<
+	ComponentPropsWithoutRef<'div'> & {
+		size?: number;
+	} & RefAttributes<AnimatedIconHandle>
+>;
 
 type NavItem = {
 	href: string;
 	label: string;
-	icon: LucideIcon;
+	icon: AnimatedIconComponent;
 };
 
 const navItems: NavItem[] = [
-	{ href: '#arc', label: 'Arquitetura Frontend', icon: Hexagon },
-	{ href: '#perf', label: 'Performance', icon: Zap },
-	{ href: '#state', label: 'Estado & Comunicação', icon: Orbit },
-	{ href: '#test', label: 'Testes & Qualidade', icon: Shield },
-	{ href: '#access', label: 'Acessibilidade', icon: Contrast },
-	{ href: '#observer', label: 'Observabilidade', icon: Eye },
+	{ href: '#arc', label: 'Arquitetura Frontend', icon: BlocksIcon },
+	{ href: '#perf', label: 'Performance', icon: ZapIcon },
+	{ href: '#state', label: 'Estado & Comunicação', icon: AtomIcon },
+	{ href: '#test', label: 'Testes & Qualidade', icon: ShieldCheckIcon },
+	{ href: '#access', label: 'Acessibilidade', icon: ContrastIcon },
+	{ href: '#observer', label: 'Observabilidade', icon: EyeIcon },
 ];
 
 export function SectionNav({
@@ -42,6 +56,7 @@ export function SectionNav({
 	className?: string;
 }) {
 	const isVertical = orientation === 'vertical';
+	const iconRefs = useRef<Record<string, AnimatedIconHandle | null>>({});
 
 	return (
 		<ul
@@ -54,7 +69,10 @@ export function SectionNav({
 				const Icon = item.icon;
 
 				return (
-					<li key={item.href}>
+					<li
+						key={item.href}
+						onMouseEnter={() => iconRefs.current[item.href]?.startAnimation()}
+						onMouseLeave={() => iconRefs.current[item.href]?.stopAnimation()}>
 						<a href={item.href}>
 							<Tooltip>
 								<TooltipTrigger className='hover:text-cyan-500 transition-all ease-in-out duration-500 group'>
@@ -74,7 +92,12 @@ export function SectionNav({
 											colorFrom='#0e7490'
 											colorTo='#06b6d4'
 										/>
-										<Icon />
+										<Icon
+											ref={(instance) => {
+												iconRefs.current[item.href] = instance;
+											}}
+											size={24}
+										/>
 									</div>
 								</TooltipTrigger>
 								<TooltipContent>

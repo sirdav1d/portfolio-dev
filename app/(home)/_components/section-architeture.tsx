@@ -1,6 +1,6 @@
 ﻿/** @format */
 
-import { Hexagon } from 'lucide-react';
+import { BlocksIcon } from '@/components/ui/blocks';
 import Architeture from './architeture';
 
 export default function SectionArchiteture() {
@@ -9,11 +9,10 @@ export default function SectionArchiteture() {
 			id='arc'
 			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 md:space-y-16'>
-				<Hexagon
-					fill='none'
-					stroke='currentColor'
-					strokeWidth={0.2}
-					className='absolute left-0 top-0 h-96 w-96 text-foreground/10'
+				<BlocksIcon
+					size={384}
+					aria-hidden='true'
+					className='absolute z-20 left-0 top-0 h-96 w-96 text-foreground/10'
 				/>
 
 				<header className='space-y-4 text-center'>
@@ -104,10 +103,10 @@ export default function SectionArchiteture() {
 					</div>
 
 					<div className='rounded-xl border border-border/60 bg-background/70 p-5 space-y-3'>
-						<h3 className='text-lg md:text-2xl text-foreground'>
+						<h3 className='text-xl md:text-2xl text-foreground'>
 							O que evitamos
 						</h3>
-						<ul className='flex justify-between text-sm text-muted-foreground'>
+						<ul className='flex flex-col md:flex-row gap-5 justify-between text-sm text-muted-foreground'>
 							<li className='flex items-center gap-2'>
 								<span className='size-2 rounded-full bg-gray-100' />
 								Componentes globais com lógica de feature.

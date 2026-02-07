@@ -71,7 +71,7 @@ export default function FethExamples() {
 				</article>
 			</div>
 
-			<div className='rounded-xl border border-border/60 bg-background/70 p-4'>
+			<div className='rounded-xl  border-border/60 bg-background/70 p-0'>
 				<CodeBlock
 					language='ts'
 					filename='fetch.ts'

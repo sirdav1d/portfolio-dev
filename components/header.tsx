@@ -21,38 +21,38 @@ const topics = [
 	{
 		icon: Hexagon,
 		title: 'Arquitetura',
-		href: '#arc',
+		href: '/#arc',
 		description: 'Principios e padroes para sustentar aplicacoes robustas.',
 	},
 	{
 		icon: Zap,
 		title: 'Performance',
-		href: '#perf',
+		href: '/#perf',
 		description: 'Estrategias para entregar experiencias rapidas e eficientes.',
 	},
 	{
 		icon: Orbit,
 		title: 'Gerenciamento de Estado',
-		href: '#state',
+		href: '/#state',
 		description: 'Organize dados complexos sem perder previsibilidade.',
 	},
 	{
 		icon: Shield,
 		title: 'Testes',
-		href: '#test',
+		href: '/#test',
 		description: 'Garanta qualidade continua com automacao inteligente.',
 	},
 
 	{
 		icon: Contrast,
 		title: 'Acessibilidade',
-		href: '#access',
+		href: '/#access',
 		description: 'Interfaces inclusivas que funcionam para qualquer pessoa.',
 	},
 	{
 		icon: Eye,
 		title: 'Observabilidade',
-		href: '#observer',
+		href: '/#observer',
 		description: 'Monitore, trace e antecipe problemas em producao.',
 	},
 ];
@@ -109,6 +109,18 @@ export default function Header() {
 									))}
 								</ul>
 							</NavigationMenuContent>
+						</NavigationMenuItem>
+
+						<NavigationMenuItem>
+							<NavigationMenuLink
+								asChild
+								className='font-normal'>
+								<Link
+									href='/projetos'
+									className={navigationMenuTriggerStyle()}>
+									Projetos
+								</Link>
+							</NavigationMenuLink>
 						</NavigationMenuItem>
 
 						<NavigationMenuItem>

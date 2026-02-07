@@ -29,7 +29,7 @@ export default function Hero() {
 							Engenheiro de Software
 						</AnimatedShinyText>
 					</div>
-					<h1 className='text-3xl leading-tight 2xl:text-8xl text-foreground md:text-4xl capitalize mt-10'>
+					<h1 className='text-4xl leading-tight 2xl:text-8xl text-foreground md:text-4xl capitalize mt-10'>
 						Transformando <br />
 						complexidade <br />
 						em experiência
@@ -41,13 +41,13 @@ export default function Hero() {
 					<div className='flex flex-col items-center gap-4 sm:flex-row sm:justify-start'>
 						<RainbowButton
 							size={'lg'}
-							className='text-xl capitalize'
+							className='text-xl max-md:w-full capitalize'
 							asChild>
 							<a href='#arc'>Explorar Skills</a>
 						</RainbowButton>
 						<Button
 							variant='outline'
-							className='text-xl capitalize'
+							className='text-xl capitalize max-md:hidden'
 							size='lg'
 							asChild>
 							<Link href='/contato'>Falar comigo</Link>

@@ -12,8 +12,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
+import { ContrastIcon } from '@/components/ui/contrast';
 import type { LucideIcon } from 'lucide-react';
-import { Contrast, Keyboard, LayoutGrid } from 'lucide-react';
+import { Contrast as ContrastStroke, Keyboard, LayoutGrid } from 'lucide-react';
 import MacBookKeyboard from '@/components/macbook-keyboard';
 
 type Language = 'PT' | 'EN';
@@ -34,7 +35,7 @@ const accessibilityPillars: Pillar[] = [
 	{
 		title: 'Visual',
 		description: 'Contraste AA/AAA, legibilidade e espaçamento confortável.',
-		icon: Contrast,
+		icon: ContrastStroke,
 	},
 	{
 		title: 'Estrutura',
@@ -109,11 +110,10 @@ export default function SectionAccess() {
 			id='access'
 			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
-				<Contrast
-					fill='none'
-					stroke='currentColor'
-					strokeWidth={0.2}
-					className='absolute scale-90 -z-20 left-0 top-0 h-96 w-96 text-foreground/10'
+				<ContrastIcon
+					size={384}
+					aria-hidden='true'
+					className='absolute scale-90 z-20 left-0 top-0 h-96 w-96 text-foreground/10'
 				/>
 				<div className='flex flex-col text-center max-w-4xl mx-auto gap-5'>
 					<h2 className='text-3xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
@@ -126,7 +126,7 @@ export default function SectionAccess() {
 				</div>
 
 				<div className='grid gap-6 lg:grid-cols-12 items-stretch'>
-					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left lg:col-span-7 h-full'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left lg:col-span-7 h-full min-w-0'>
 						<div className='relative'>
 							<svg
 								viewBox='0 0 1000 40'
@@ -174,16 +174,16 @@ export default function SectionAccess() {
 							</svg>
 
 							<div className='relative grid gap-6 sm:grid-cols-3 text-left'>
-									{accessibilityPillars.map(
-										({ title, description, icon: Icon }) => (
-											<div
-												key={title}
-												className='space-y-2 text-center sm:text-left'>
-												<span className='inline-flex items-center gap-2 rounded-full border border-border/60 bg-background px-3 py-1 text-xs font-mono text-foreground'>
-													<Icon className='h-3.5 w-3.5' />
-													{title}
-												</span>
-											<p className='text-sm text-muted-foreground'>
+								{accessibilityPillars.map(
+									({ title, description, icon: Icon }) => (
+										<div
+											key={title}
+											className='space-y-2 text-left'>
+											<span className='inline-flex items-center gap-2 rounded-full border border-border/60 bg-background px-3 py-1 text-base font-mono text-foreground '>
+												<Icon className='h-6 w-6' />
+												{title}
+											</span>
+											<p className='text-sm text-muted-foreground text-pretty'>
 												{description}
 											</p>
 										</div>
@@ -192,7 +192,7 @@ export default function SectionAccess() {
 							</div>
 						</div>
 
-						<div className='mt-6 pt-4 border-t border-border/60'>
+						<div className='mt-6 pt-4 border-t border-border/90'>
 							<div className='flex items-center justify-between'>
 								<h3 className='text-lg text-foreground font-mono'>Checklist</h3>
 								<span className='text-xs uppercase tracking-wide text-muted-foreground'>
@@ -207,7 +207,7 @@ export default function SectionAccess() {
 						</div>
 					</div>
 
-					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left lg:col-span-5 h-full'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left lg:col-span-5 h-full min-w-0'>
 						<div className='flex items-center justify-between gap-4'>
 							<h3 className='text-lg text-foreground font-mono'>i18n real</h3>
 							<Select
@@ -251,14 +251,14 @@ export default function SectionAccess() {
 									<span className='text-foreground/80'>Toast</span>
 									<span className='text-foreground'>{sample.toast}</span>
 								</div>
-								<p className='pt-8 text-base italic text-foreground'>
+								<p className='pt-8 text-lg italic text-foreground text-center text-balance'>
 									&quot;{sample.tagline}&quot;
 								</p>
 							</motion.div>
 						</AnimatePresence>
 					</div>
 
-					<div className='rounded-xl border border-border/60 bg-background/70 p-4 text-left lg:col-span-8 h-full'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-4 text-left lg:col-span-8 h-full min-w-0'>
 						<h3 className='text-lg text-foreground font-mono mb-3'>Exemplo</h3>
 						<CodeBlock
 							language='tsx'
@@ -268,7 +268,7 @@ export default function SectionAccess() {
 						/>
 					</div>
 
-					<div className='rounded-xl border border-border/60 bg-background/70 p-4 text-left lg:col-span-4 h-full flex flex-col gap-4'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-4 text-left lg:col-span-4 h-full flex flex-col gap-4 min-w-0'>
 						<div>
 							<h3 className='text-lg text-foreground font-mono'>Teclado</h3>
 							<p className='text-sm text-muted-foreground mt-2'>
@@ -286,8 +286,8 @@ export default function SectionAccess() {
 								</span>
 							</div>
 						</div>
-						<div className='mt-auto flex justify-center overflow-hidden'>
-							<div className='scale-[0.38] sm:scale-[0.5] md:scale-[0.6]'>
+						<div className='relative mt-auto flex h-36 w-full items-end justify-center overflow-hidden sm:h-44 md:h-auto'>
+							<div className='origin-top bg-red-500 border scale-[1.1] max-md:-translate-y-28 sm:scale-[0.5] md:scale-[0.6]'>
 								<MacBookKeyboard />
 							</div>
 						</div>

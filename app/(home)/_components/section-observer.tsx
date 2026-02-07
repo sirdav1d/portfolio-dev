@@ -1,7 +1,8 @@
 ﻿/** @format */
 
 import { CodeBlock } from '@/components/ui/code-block';
-import { Activity, Eye, LineChart } from 'lucide-react';
+import { EyeIcon } from '@/components/ui/eye';
+import { Activity, Eye as EyeStroke, LineChart } from 'lucide-react';
 
 const LIGHTHOUSE_SNIPPET = `// lighthouserc.js
 module.exports = {
@@ -53,11 +54,10 @@ export default function SectionObserver() {
 			id='observer'
 			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
-				<Eye
-					fill='none'
-					stroke='currentColor'
-					strokeWidth={0.2}
-					className='absolute scale-90 -z-20 right-0 top-0 h-96 w-96 text-foreground/10'
+				<EyeIcon
+					size={384}
+					aria-hidden='true'
+					className='absolute scale-90 z-20 right-0 top-0 h-96 w-96 text-foreground/10'
 				/>
 				<div className='flex flex-col text-center max-w-4xl mx-auto gap-5'>
 					<h2 className='text-3xl xl:text-7xl text-foreground md:text-5xl capitalize text-center'>
@@ -94,7 +94,7 @@ export default function SectionObserver() {
 					</div>
 					<div className='rounded-xl border border-border/60 bg-background/70 p-5 text-left'>
 						<div className='flex items-center gap-2 text-sm text-muted-foreground'>
-							<Eye className='h-4 w-4' />
+							<EyeStroke className='h-4 w-4' />
 							Sentry
 						</div>
 						<h3 className='mt-2 text-lg text-foreground font-mono'>Erros</h3>
