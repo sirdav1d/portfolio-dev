@@ -20,8 +20,11 @@ export default function SectionArchiteture() {
 						Arquitetura Frontend
 					</h2>
 					<p className='text-muted-foreground text-balance leading-normal md:text-lg max-w-3xl mx-auto'>
-						Decisões de arquitetura que tornam o código previsível, escalável e
-						fácil de manter, mesmo com crescimento de features e time.
+						Decisões de arquitetura que tornam o{' '}
+						<strong className='text-foreground'>
+							código previsível, escalável e fácil de manter
+						</strong>
+						, mesmo com crescimento de features e time.
 					</p>
 				</header>
 
