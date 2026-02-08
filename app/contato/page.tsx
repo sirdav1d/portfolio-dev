@@ -19,7 +19,7 @@ export default function ContatoPage() {
 				<header className='text-center space-y-4'>
 					<h1 className='text-4xl md:text-5xl text-foreground'>Contato</h1>
 					<p className='text-muted-foreground text-balance md:text-lg'>
-						Me conta sobre o projeto e vamos fazer isso acontecer
+						Eu vou transformar o seu plano em um produto incrível
 					</p>
 				</header>
 
@@ -78,7 +78,7 @@ export default function ContatoPage() {
 						</Button>
 					</form>
 
-					<div className='rounded-xl border border-border/60 bg-background/70 p-6 text-left flex justify-between'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-6 text-left flex justify-between max-md:flex-col'>
 						<div className='space-y-2'>
 							<h2 className='text-2xl text-foreground'>
 								Falar diretamente comigo
@@ -88,7 +88,9 @@ export default function ContatoPage() {
 							</p>
 						</div>
 						<div className='space-y-2'>
-							<RainbowButton asChild>
+							<RainbowButton
+								asChild
+								className='max-md:w-full max-md:mt-5'>
 								<a
 									href={`https://wa.me/${WHATSAPP_NUMBER}`}
 									target='_blank'
