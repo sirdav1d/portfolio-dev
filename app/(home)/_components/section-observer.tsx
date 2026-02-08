@@ -52,7 +52,7 @@ export default function SectionObserver() {
 	return (
 		<section
 			id='observer'
-			className='min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative'>
+			className='min-h-[calc(100vh-5rem)] scroll-mt-24 flex flex-col items-center justify-center relative'>
 			<div className='mx-auto w-full max-w-7xl text-center px-5 sm:text-left gap-10 mt-10 md:mt-0 space-y-10 '>
 				<EyeIcon
 					size={384}
