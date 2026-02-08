@@ -120,8 +120,11 @@ export default function SectionAccess() {
 						Acessibilidade & <span className='lowercase'>i18n</span>
 					</h2>
 					<p className='text-muted-foreground md:text-lg text-balance'>
-						Interfaces acessíveis, responsivas e preparadas para qualquer
-						contexto. Inclusão como parte do produto.
+						Interfaces{' '}
+						<strong className='text-foreground'>
+							acessíveis, responsivas e preparadas para qualquer contexto.
+						</strong>{' '}
+						Inclusão como parte do produto.
 					</p>
 				</div>
 

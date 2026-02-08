@@ -102,11 +102,11 @@ export default function SectionArchiteture() {
 						</div>
 					</div>
 
-					<div className='rounded-xl border border-border/60 bg-background/70 p-5 space-y-3'>
-						<h3 className='text-xl md:text-2xl text-foreground'>
+					<div className='rounded-xl border border-border/60 bg-background/70 p-5 space-y-5'>
+						<h3 className='text-xl md:text-3xl text-foreground text-center'>
 							O que evitamos
 						</h3>
-						<ul className='flex flex-col md:flex-row gap-5 justify-between text-sm text-muted-foreground'>
+						<ul className='flex flex-col md:flex-row gap-5 justify-between max-md:text-sm text-muted-foreground'>
 							<li className='flex items-center gap-2'>
 								<span className='size-2 rounded-full bg-gray-100' />
 								Componentes globais com lógica de feature.

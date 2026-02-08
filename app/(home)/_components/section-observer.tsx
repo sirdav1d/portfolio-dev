@@ -64,8 +64,11 @@ export default function SectionObserver() {
 						Observabilidade & Métricas
 					</h2>
 					<p className='text-muted-foreground md:text-lg text-balance'>
-						Medir, detectar e aprender: performance, comportamento e erros em
-						produção com foco em impacto real.
+						<strong className='text-foreground'>
+							Medir, detectar e aprender
+						</strong>
+						: performance, comportamento e erros em produção com foco em impacto
+						real.
 					</p>
 				</div>
 
