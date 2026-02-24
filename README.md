@@ -33,6 +33,20 @@ Portfolio interativo pensado como walkthrough das decisões que tomo em projetos
 # acessar http://localhost:3000
 ```
 
+## Formulario de contato (Resend)
+
+O envio da pagina ` /contato ` usa Server Action com Resend.
+
+1. Crie seu arquivo `.env.local` com base em `.env.example`.
+2. Configure:
+- `RESEND_API_KEY`
+- `RESEND_ACCOUNT_EMAIL`
+3. Rode o projeto e envie o formulario em `/contato`.
+
+Obs:
+- Enquanto o remetente estiver em `onboarding@resend.dev`, o Resend permite envio apenas para o e-mail da propria conta (mesmo valor de `RESEND_ACCOUNT_EMAIL`).
+- Para enviar para terceiros, verifique um dominio no Resend e troque o campo `from` para seu dominio.
+
 ## Estrutura relevante
 
 - `app/(home)/page.tsx` e `_components/*`: secoes da landing (arquitetura, performance, estado, testes, acessibilidade, observabilidade).

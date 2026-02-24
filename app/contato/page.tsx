@@ -1,8 +1,8 @@
 ﻿/** @format */
 
 import type { Metadata } from 'next';
-import { Button } from '@/components/ui/button';
 import { RainbowButton } from '@/components/ui/rainbow-button';
+import ContactForm from './_components/contact-form';
 
 export const metadata: Metadata = {
 	title: 'Contato',
@@ -19,64 +19,12 @@ export default function ContatoPage() {
 				<header className='text-center space-y-4'>
 					<h1 className='text-4xl md:text-5xl text-foreground'>Contato</h1>
 					<p className='text-muted-foreground text-balance md:text-lg'>
-						Eu vou transformar o seu plano em um produto incrível
+						Vamos tirar sua ideia do papel e transformar em produto.
 					</p>
 				</header>
 
 				<div className='grid gap-10'>
-					<form className='rounded-xl border border-border/60 bg-background/70 p-6 space-y-8 text-left'>
-						<div className='grid gap-6 sm:grid-cols-2'>
-							<label className='space-y-3 text-sm text-muted-foreground'>
-								<span className='text-xs uppercase tracking-widest'>Nome</span>
-								<input
-									type='text'
-									name='name'
-									placeholder='Seu nome'
-									className='w-full rounded-md border border-border/60 bg-background px-3 py-2 text-foreground outline-none focus:border-foreground/40'
-								/>
-							</label>
-							<label className='space-y-3 text-sm text-muted-foreground'>
-								<span className='text-xs uppercase tracking-widest'>Email</span>
-								<input
-									type='email'
-									name='email'
-									placeholder='voce@email.com'
-									className='w-full rounded-md border border-border/60 bg-background px-3 py-2 text-foreground outline-none focus:border-foreground/40'
-								/>
-							</label>
-						</div>
-						<div>
-							<label className='space-y-3 text-sm text-muted-foreground mb-8'>
-								<span className='text-xs uppercase tracking-widest'>
-									Assunto
-								</span>
-								<input
-									type='text'
-									name='subject'
-									placeholder='Novo produto, consultoria, redesign...'
-									className='w-full rounded-md border border-border/60 bg-background px-3 py-2 text-foreground outline-none focus:border-foreground/40'
-								/>
-							</label>
-						</div>
-
-						<label className='space-y-3 text-sm text-muted-foreground'>
-							<span className='text-xs uppercase tracking-widest'>
-								Mensagem
-							</span>
-							<textarea
-								name='message'
-								rows={6}
-								placeholder='Descreva contexto, prazo e objetivos.'
-								className='w-full rounded-md border border-border/60 bg-background px-3 py-2 text-foreground outline-none focus:border-foreground/40'
-							/>
-						</label>
-
-						<Button
-							type='submit'
-							className='w-full mt-5 text-xl'>
-							Enviar
-						</Button>
-					</form>
+					<ContactForm />
 
 					<div className='rounded-xl border border-border/60 bg-background/70 p-6 text-left flex justify-between max-md:flex-col'>
 						<div className='space-y-2'>
